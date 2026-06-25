@@ -2,25 +2,25 @@
   "medicines": [
     {
       "id": "antacid",
-      "name": "ยาเม็ดลดกรด",
-      "genericName": "Alumina-Magnesia-Simethicone",
+      "name": "ยาเม็ดลดกรด อะลูมินา-แมกนีเซีย",
+      "genericName": "Aluminium Hydroxide & Magnesium Hydroxide",
       "category": "internal",
       "subcategory": "stomach",
       "icon": "💊",
       "color": "#60A5FA",
-      "indications": "บรรเทาอาการแสบร้อนกลางอก อาหารไม่ย่อย ท้องอืด ท้องเฟ้อ และอาการปวดท้องที่เกิดจากกรดในกระเพาะอาหารมากเกินไป",
+      "indications": "บรรเทาอาการจุกเสียด ท้องขึ้น ท้องเฟ้อ และปวดท้องเนื่องจากมีกรดมากในกระเพาะอาหาร หรือแผลในกระเพาะอาหารและลำไส้",
       "dosage": {
-        "adult": "รับประทาน 1–2 เม็ด หลังอาหาร 1–3 ชั่วโมง และก่อนนอน เคี้ยวก่อนกลืน",
-        "child": "เด็กอายุ 6–12 ปี: รับประทานครั้งละ 1 เม็ด เด็กอายุต่ำกว่า 6 ปี: ไม่แนะนำ",
-        "maxPerDay": "8 เม็ดต่อวัน"
+        "adult": "เคี้ยวก่อนกลืน รับประทานครั้งละ 1-4 เม็ด วันละ 3-4 ครั้ง หลังอาหาร 20 นาทีถึง 1 ชั่วโมง และก่อนนอน หรือเมื่อมีอาการ",
+        "child": "เด็กอายุ 6-12 ปี: ครั้งละ 1-2 เม็ด เด็กต่ำกว่า 6 ปี: ไม่แนะนำ",
+        "maxPerDay": "ผู้ใหญ่ไม่เกิน 16 เม็ดต่อวัน"
       },
       "warnings": [
-        "ห้ามใช้ติดต่อกันเกิน 2 สัปดาห์โดยไม่ปรึกษาแพทย์",
-        "ยาลดกรดอาจลดการดูดซึมยาอื่น ควรรับประทานยาอื่นก่อนหรือหลังยาลดกรดอย่างน้อย 2 ชั่วโมง",
-        "ผู้ที่มีโรคไตควรปรึกษาแพทย์ก่อนใช้"
+        "ห้ามใช้ในผู้ที่เป็นโรคหัวใจหรือโรคไต",
+        "ไม่ควรรับประทานติดต่อกันเกิน 2 สัปดาห์",
+        "ยาลดกรดอาจลดการดูดซึมยาอื่น ควรรับประทานยาอื่นห่างกันอย่างน้อย 2 ชั่วโมง"
       ],
-      "contraindications": "ผู้ป่วยโรคไตเรื้อรัง ผู้ที่แพ้ส่วนประกอบในตัวยา",
-      "storage": "เก็บในที่แห้ง อุณหภูมิไม่เกิน 30°C ห่างจากแสงแดดโดยตรง",
+      "contraindications": "ผู้ป่วยโรคไตเรื้อรัง ผู้ป่วยโรคหัวใจ",
+      "storage": "เก็บในภาชนะปิดสนิท ป้องกันแสง อุณหภูมิไม่เกิน 30°C",
       "isEmergencyKit": false,
       "labelCheck": "ต้องมีคำว่า 'ยาสามัญประจำบ้าน' ในกรอบสีเขียว เลขทะเบียน Reg.No. และระบุส่วนประกอบชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
@@ -102,7 +102,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ฉลากต้องระบุขนาดอนุภาคถ่าน (mesh size) และวัตถุประสงค์การใช้",
       "shelfLife": "3 ปี (ถ้าเก็บถูกต้อง)",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "senna_laxative",
@@ -166,17 +166,18 @@
       "color": "#E24B4A",
       "indications": "ลดไข้ บรรเทาอาการปวดศีรษะ ปวดกล้ามเนื้อ ปวดข้อ ปวดประจำเดือน และปวดระดับเล็กน้อยถึงปานกลางทั่วไป",
       "dosage": {
-        "adult": "รับประทาน 1–2 เม็ด (500–1,000 มก.) ทุก 4–6 ชั่วโมง เมื่อมีอาการ",
-        "child": "คำนวณจากน้ำหนัก 10–15 มก./กก./ครั้ง ทุก 4–6 ชั่วโมง ใช้น้ำเชื่อม 120 มก./5 มล. สำหรับเด็กเล็ก",
-        "maxPerDay": "ผู้ใหญ่: ไม่เกิน 4,000 มก. (8 เม็ด 500 มก.) ต่อวัน"
+        "adult": "รับประทานทุกๆ 4–6 ชั่วโมงเมื่อมีอาการ ไม่ควรรับประทานเกินวันละ 5 ครั้ง ผู้ใหญ่ รับประทานครั้งละ 1-2 เม็ด",
+        "child": "เด็ก 6-12 ปี รับประทานครั้งละ 1 เม็ด เด็ก 3-6 ปี รับประทานครั้งละ 1/2 เม็ด",
+        "maxPerDay": "ผู้ใหญ่ไม่เกิน 10 เม็ดต่อวัน (หรือตามน้ำหนักตัว)"
       },
       "warnings": [
-        "ห้ามใช้ยานี้เกินขนาดที่กำหนด เพราะอาจทำให้ตับถูกทำลายอย่างรุนแรง",
-        "ห้ามดื่มแอลกอฮอล์ขณะใช้ยานี้",
-        "หากอาการไม่ดีขึ้นภายใน 3 วัน (ไข้) หรือ 5 วัน (ปวด) ควรพบแพทย์"
+        "ห้ามใช้ในเด็กอายุต่ำกว่า 1 ปี และหญิงมีครรภ์ระยะใกล้คลอด",
+        "ห้ามใช้สำหรับลดไข้ในผู้ที่ป่วยเป็นโรคไข้หวัดใหญ่ อีสุกอีใส และไข้เลือดออก",
+        "ห้ามใช้ในผู้ที่เป็นโรคแผลในระบบทางเดินอาหารและโรคหอบหืด",
+        "ห้ามใช้สำหรับรักษาอาการปวดเมื่อยเนื่องจากการทำงานหนัก"
       ],
       "contraindications": "ผู้ป่วยโรคตับรุนแรง ผู้ที่แพ้พาราเซตามอล",
-      "storage": "เก็บในที่แห้ง อุณหภูมิห้อง ห่างจากแสงแดดและความร้อน",
+      "storage": "เก็บที่อุณหภูมิต่ำกว่า 40 องศาเซลเซียส",
       "isEmergencyKit": true,
       "labelCheck": "ต้องมีคำว่า 'ยาสามัญประจำบ้าน' ในกรอบสีเขียว เลขทะเบียน Reg.No. ระบุ 500 มก./เม็ด",
       "shelfLife": "5 ปี นับจากวันผลิต",
@@ -391,32 +392,6 @@
       "isMOPHRecommended": true
     },
     {
-      "id": "antacid_alumina_magnesia_tablets",
-      "name": "ยาเม็ดลดกรด อะลูมินา-แมกนีเซีย",
-      "genericName": "Aluminium Hydroxide & Magnesium Hydroxide",
-      "category": "internal",
-      "subcategory": "stomach",
-      "icon": "⚪",
-      "color": "#3B82F6",
-      "indications": "บรรเทาอาการจุกเสียด ท้องขึ้น ท้องเฟ้อ และปวดท้องเนื่องจากมีกรดมากในกระเพาะอาหาร หรือแผลในกระเพาะอาหารและลำไส้",
-      "dosage": {
-        "adult": "เคี้ยวก่อนกลืน รับประทานครั้งละ 1-4 เม็ด วันละ 3-4 ครั้ง หลังอาหาร 20 นาทีถึง 1 ชั่วโมง และก่อนนอน หรือเมื่อมีอาการ",
-        "child": "เด็กอายุ 6-12 ปี: ครั้งละ 1-2 เม็ด เด็กต่ำกว่า 6 ปี: ไม่แนะนำ",
-        "maxPerDay": "ผู้ใหญ่ไม่เกิน 16 เม็ดต่อวัน"
-      },
-      "warnings": [
-        "ห้ามใช้ในผู้ที่เป็นโรคหัวใจหรือโรคไต",
-        "ไม่ควรรับประทานติดต่อกันเกิน 2 สัปดาห์",
-        "ยาลดกรดอาจลดการดูดซึมยาอื่น ควรรับประทานยาอื่นห่างกันอย่างน้อย 2 ชั่วโมง"
-      ],
-      "contraindications": "ผู้ป่วยโรคไตเรื้อรัง ผู้ป่วยโรคหัวใจ",
-      "storage": "เก็บในภาชนะปิดสนิท ป้องกันแสง อุณหภูมิไม่เกิน 30°C",
-      "isEmergencyKit": false,
-      "labelCheck": "ต้องมีคำว่า 'ยาสามัญประจำบ้าน' ในกรอบสีเขียว เลขทะเบียน Reg.No. และระบุส่วนประกอบชัดเจน",
-      "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
-    },
-    {
       "id": "antacid_alumina_magnesia_suspension",
       "name": "ยาน้ำลดกรด อะลูมินา-แมกนีเซีย",
       "genericName": "Aluminium Hydroxide & Magnesium Hydroxide Suspension",
@@ -440,7 +415,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ต้องมีคำว่า 'ยาสามัญประจำบ้าน' ในกรอบสีเขียว เลขทะเบียน Reg.No. และระบุส่วนประกอบชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "sodamint_tablets",
@@ -465,7 +440,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบ Sodium Bicarbonate 300 มก. ต่อเม็ด และเลขทะเบียน Reg.No.",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "carminative_mixture",
@@ -490,7 +465,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณแอลกอฮอล์และคำเตือนบนฉลากชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "sodium_bicarbonate_infant_mixture",
@@ -515,7 +490,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุตัวยาสำคัญ Sodium Bicarbonate 50 มก./5 มล. และห้ามใช้แอลกอฮอล์",
       "shelfLife": "2 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "mahahing_tincture",
@@ -540,7 +515,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุคำเตือน 'ยาใช้ภายนอก ห้ามรับประทาน' สีแดงชัดเจนบนฉลาก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "antacid_simethicone_suspension",
@@ -693,7 +668,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Glycerin 91% w/w น้ำหนักแท่งยาไม่เกิน 1.5 กรัม และคำว่าสำหรับเด็ก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "glycerin_suppository_adult",
@@ -718,7 +693,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Glycerin 91% w/w น้ำหนักแท่งยาประมาณ 2.55 กรัม และข้อความสำหรับผู้ใหญ่",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "magnesium_hydroxide_mixture",
@@ -744,7 +719,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Magnesium Hydroxide 1.2 กรัมต่อ 15 มล. และคำเตือนผู้ป่วยโรคไต",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "sodium_chloride_enema",
@@ -770,7 +745,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุความเข้มข้น Sodium Chloride 15% w/v และคำว่า 'ยาใช้เฉพาะที่ ห้ามรับประทาน'",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "paracetamol_325mg",
@@ -796,7 +771,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาด Paracetamol 325 มก. ต่อเม็ด และมีคำว่า 'ยาสามัญประจำบ้าน' ชัดเจน",
       "shelfLife": "5 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "paracetamol_syrup_child",
@@ -822,7 +797,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรงชัดเจน 120 มก./5 มล. ปราศจากแอลกอฮอล์ และคำเตือนเรื่องการทำลายตับ",
       "shelfLife": "3 ปี (หลังเปิดขวดใช้ได้ 3 เดือน)",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "pain_relief_plaster",
@@ -848,7 +823,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบหลักที่แผ่นพลาสเตอร์ และข้อห้ามใช้กับแผลสด",
       "shelfLife": "3 ปี (ซองที่ยังไม่เปิด)",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "cough_mixture_child",
@@ -873,7 +848,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุตัวยาสำคัญต่อ 5 มล. (Ammonium Carbonate 20 มก. และ Glycyrrhiza 0.25 มล.) ชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "inhaler_menthol_camphor",
@@ -899,7 +874,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Menthol, Camphor, Eucalyptus Oil ชัดเจน และห้ามใช้ในเด็กเล็ก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "vaporizing_ointment",
@@ -925,7 +900,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบหลักและข้อความ 'ห้ามทาในรูจมูก และห้ามใช้ในเด็กต่ำกว่า 2 ปี'",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "eye_wash_saline",
@@ -951,7 +926,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบเกลือแร่ Isotonic pH 6-8 และระบุวันหมดอายุหลังเปิดขวดชัดเจน",
       "shelfLife": "2 ปี (เปิดใช้แล้วใช้ได้ 30 วัน)",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "throat_paint_iodine",
@@ -977,7 +952,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุสัดส่วน Iodine 1.25% และ Potassium Iodide 2.5% และคำเตือนเรื่องการกลืน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "gentian_violet_solution",
@@ -1003,7 +978,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุตัวยาสำคัญ Gentian Violet 1% w/v และมีข้อความระบุใช้ทาแผลเชื้อราในปากและผิวหนัง",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "toothache_drops",
@@ -1028,7 +1003,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบหลักกานพลูและ Chlorobutanol ชัดเจน และคำเตือนหลีกเลี่ยงการถูกเหงือก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "throat_lozenge_herbal",
@@ -1053,7 +1028,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบสมุนไพร/น้ำมันหอมระเหย (เช่น ชะเอมเทศ, กานพลู, ขิง) ชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "throat_lozenge_chemical",
@@ -1078,7 +1053,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรงยาปฏิชีวนะฆ่าเชื้อในช่องปาก อัตราส่วนสารสำคัญชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "tincture_iodine",
@@ -1104,7 +1079,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความเข้มข้น Iodine 2.0-2.5% และมีข้อความเตือนยาอันตรายใช้ภายนอก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "tincture_thimerosal",
@@ -1129,7 +1104,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุ Thimerosal 0.1% w/v และมีตัวหนังสือสีแดงเตือนระวังสารประกอบปรอท",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "isopropyl_alcohol_70",
@@ -1155,7 +1130,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุ Isopropyl Alcohol 70% v/v และแต่งสีน้ำเงิน (Brilliant Blue C.I. No.42090)",
       "shelfLife": "5 ปี (หลังเปิดใช้ขวดปิดสนิทใช้ได้ 1 ปี)",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "ethyl_alcohol_70",
@@ -1181,7 +1156,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุ Ethyl Alcohol 70% v/v ชัดเจน แต่งสีน้ำเงิน Brilliant Blue และข้อควรระวังติดไฟ",
       "shelfLife": "5 ปี (หลังเปิดใช้ขวดปิดสนิทใช้ได้ 1 ปี)",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "chloroxylenol_antiseptic",
@@ -1232,7 +1207,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุ Benzyl Benzoate 25% w/v ชนิดโลชั่นคำเตือนห้ามกิน และสำหรับเด็กให้เจือจาง",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "sulphur_ointment_10",
@@ -1258,7 +1233,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Sublimed Sulphur 10% w/w ชนิดขี้ผึ้งทาผิวหนัง และคำเตือนห้ามรับประทาน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "benzoic_salicylic_ointment",
@@ -1284,7 +1259,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุตัวยาสำคัญ Benzoic Acid, Salicylic Acid เปอร์เซ็นต์ชัดเจน และมีคุณสมบัติผลัดเซลล์ผิว",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "coal_tar_ointment",
@@ -1310,7 +1285,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Coal Tar 1% w/w และมีคำเตือนระวังปฏิกิริยากับแสงแดด",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "sodium_thiosulfate_powder",
@@ -1335,7 +1310,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุเกลือโซเดียมไทโอซัลเฟต 100% w/w และวิธีเจือจางผสมน้ำใช้ล้างทาผิวหนัง",
       "shelfLife": "3 ปี (ผงแห้งในซอง)",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "vitamin_b_complex",
@@ -1360,7 +1335,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรงและชนิดของวิตามินบีในสูตรตำรับชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "vitamin_c_100mg",
@@ -1385,7 +1360,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรง Vitamin C 100 มก. ต่อเม็ด และแต่งกลิ่นส้มชวนอมเคี้ยว",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "ferrous_sulfate_tablets",
@@ -1411,7 +1386,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณเหล็กเทียบเท่า Iron 60 มก. และคำเตือนเรื่องอุจจาระดำ",
       "shelfLife": "5 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "multivitamin_tablets",
@@ -1436,7 +1411,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบขนาดความแรงของวิตามินแต่ละชนิดละเอียด และข้อควรระวังในสตรีมีครรภ์",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "cod_liver_oil_capsules",
@@ -1461,7 +1436,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณน้ำมันตับปลาและขนาดความแรงเทียบเท่า Vitamin A และ Vitamin D ชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "cod_liver_oil_liquid",
@@ -1486,7 +1461,59 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรงเทียบเท่า Vitamin A และ D ต่อ 5 มล. ชัดเจน และระบุวันหมดอายุ",
       "shelfLife": "2 ปี นับจากวันผลิต",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
+    },
+    {
+      "id": "eye_drops_sulfacetamide",
+      "name": "ยาหยอดตา ซัลฟาเซตาไมด์",
+      "genericName": "Sulfacetamide Sodium 10% w/v",
+      "category": "external",
+      "subcategory": "eye",
+      "icon": "👁️",
+      "color": "#10B981",
+      "indications": "รักษาอาการตาแดง ตาอักเสบ จากโรคติดเชื้อ",
+      "dosage": {
+        "adult": "หยอดตาครั้งละ 1-2 หยด วันละ 3-4 ครั้ง",
+        "child": "หยอดตาครั้งละ 1-2 หยด วันละ 3-4 ครั้ง (ตามดุลยพินิจของแพทย์)",
+        "maxPerDay": "ไม่เกิน 4 ครั้งต่อวัน"
+      },
+      "warnings": [
+        "ห้ามใช้เมื่อเปิดใช้แล้วเกิน 1 เดือน",
+        "ห้ามใช้เมื่อยาเปลี่ยนสี ขุ่น หรือมีตะกอน",
+        "หากเกิดอาการระคายเคืองหรือมีผื่นรอบดวงตา ให้หยุดใช้ยาและพบแพทย์ทันที"
+      ],
+      "contraindications": "ผู้ที่แพ้ยากลุ่มซัลฟา (Sulphonamides)",
+      "storage": "เก็บในที่เย็น อุณหภูมิระหว่าง 8-15 องศาเซลเซียส และป้องกันไม่ให้ถูกแสงแดด",
+      "isEmergencyKit": false,
+      "labelCheck": "ต้องระบุเลขทะเบียนทะเบียนตำรับยา วันหมดอายุ และมีฉลากเตือนเรื่องการใช้ยาหยอดตาอย่างถูกต้อง",
+      "shelfLife": "1 เดือน หลังเปิดขวดใช้",
+      "isMOPHRecommended": true
+    },
+    {
+      "id": "silver_sulfadiazine_cream",
+      "name": "ยารักษาแผลติดเชื้อ ซิลเวอร์ ซัลฟาไดอาซีน ครีม",
+      "genericName": "Silver Sulfadiazine 1% w/w Cream",
+      "category": "external",
+      "subcategory": "wound",
+      "icon": "🩹",
+      "color": "#F59E0B",
+      "indications": "ใช้ทาภายนอก เพื่อรักษาการติดเชื้อของแผล ซึ่งเกิดจากไฟไหม้ หรือน้ำร้อนลวก",
+      "dosage": {
+        "adult": "ใช้ทาบริเวณแผลที่เป็น ควรทำความสะอาดแผล แล้วทาครีมทุกวัน วันละ 1-2 ครั้ง (สำหรับแผลที่ถูกไฟไหม้ ควรใช้ครีมทุก 24 ชั่วโมง)",
+        "child": "ทาบริเวณแผลที่เป็น วันละ 1-2 ครั้ง ภายใต้การดูแลของแพทย์ (ห้ามใช้ในทารกแรกเกิดอายุต่ำกว่า 1 เดือน)",
+        "maxPerDay": "ทาวันละ 1-2 ครั้งตามความจำเป็น"
+      },
+      "warnings": [
+        "ห้ามใช้ยานี้ในหญิงมีครรภ์ และทารกแรกเกิด (1 เดือนแรก)",
+        "ห้ามใช้ในคนที่แพ้ยา Sulphonamide (กลุ่มซัลฟา)",
+        "ห้ามใช้ในผู้ที่เป็นโรคตับและโรคไต (ยกเว้นแพทย์สั่ง)"
+      ],
+      "contraindications": "หญิงมีครรภ์ ทารกแรกเกิดอายุต่ำกว่า 1 เดือน ผู้ที่แพ้ยากลุ่มซัลฟา",
+      "storage": "เก็บในที่อุณหภูมิระหว่าง 15-30 องศาเซลเซียส",
+      "isEmergencyKit": false,
+      "labelCheck": "ต้องระบุเลขทะเบียนทะเบียนตำรับยา วันหมดอายุ และมีฉลากเตือนเรื่องการแพ้ยาซัลฟา",
+      "shelfLife": "3 ปี นับจากวันผลิต",
+      "isMOPHRecommended": true
     }
   ]
 }
