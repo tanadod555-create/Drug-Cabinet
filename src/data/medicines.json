@@ -6,7 +6,7 @@
       "genericName": "Alumina-Magnesia-Simethicone",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🥛",
+      "icon": "💊",
       "color": "#60A5FA",
       "indications": "บรรเทาอาการแสบร้อนกลางอก อาหารไม่ย่อย ท้องอืด ท้องเฟ้อ และอาการปวดท้องที่เกิดจากกรดในกระเพาะอาหารมากเกินไป",
       "dosage": {
@@ -58,7 +58,7 @@
       "genericName": "Oral Rehydration Salts (ORS)",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🥤",
+      "icon": "🫙",
       "color": "#34D399",
       "indications": "ทดแทนน้ำและเกลือแร่ที่สูญเสียจากท้องเสีย อาเจียน เหงื่อออกมาก หรือออกกำลังกายหนัก ป้องกันและรักษาภาวะขาดน้ำ",
       "dosage": {
@@ -84,7 +84,7 @@
       "genericName": "Activated Charcoal",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🪨",
+      "icon": "⬛",
       "color": "#6B7280",
       "indications": "ใช้ดูดซับสารพิษหรือยาที่กินเข้าไปเกินขนาดในกรณีฉุกเฉิน และบรรเทาอาการท้องอืด ท้องเฟ้อจากแก๊สในทางเดินอาหาร",
       "dosage": {
@@ -136,7 +136,7 @@
       "genericName": "Mebendazole",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🪱",
+      "icon": "🟡",
       "color": "#FBBF24",
       "indications": "รักษาโรคพยาธิปากขอ พยาธิไส้เดือน พยาธิแส้ม้า พยาธิเส้นด้าย และโรคพยาธิลำไส้ชนิดต่างๆ",
       "dosage": {
@@ -188,7 +188,7 @@
       "genericName": "Chlorpheniramine Maleate (CPM)",
       "category": "internal",
       "subcategory": "allergy",
-      "icon": "🤧",
+      "icon": "🌸",
       "color": "#8B5CF6",
       "indications": "บรรเทาอาการแพ้ทุกชนิด ไม่ว่าจะเป็น คัดจมูก น้ำมูกไหล จาม คันตา คันผิวหนัง ลมพิษ และแมลงสัตว์กัดต่อย",
       "dosage": {
@@ -214,7 +214,7 @@
       "genericName": "Compound Codeine Linctus (Brown Mixture)",
       "category": "internal",
       "subcategory": "allergy",
-      "icon": "🟤",
+      "icon": "🍶",
       "color": "#92400E",
       "indications": "บรรเทาอาการไอแห้ง ไอเรื้อรัง คอแห้งระคาย และอาการไอที่รบกวนการนอน",
       "dosage": {
@@ -240,7 +240,7 @@
       "genericName": "Ammonium Carbonate / Aromatic Ammonia",
       "category": "internal",
       "subcategory": "dizziness",
-      "icon": "👃",
+      "icon": "💨",
       "color": "#06B6D4",
       "indications": "ใช้ดมเพื่อบรรเทาอาการวิงเวียนศีรษะ เป็นลม หมดสติ คลื่นไส้จากความร้อน หรืออาการเมาจากรถ เรือ เครื่องบิน",
       "dosage": {
@@ -292,7 +292,7 @@
       "genericName": "Dimenhydrinate",
       "category": "internal",
       "subcategory": "motion_sickness",
-      "icon": "🤢",
+      "icon": "🌀",
       "color": "#10B981",
       "indications": "ป้องกันและรักษาอาการเมารถ เมาเรือ เมาเครื่องบิน บรรเทาอาการคลื่นไส้ อาเจียน และเวียนศีรษะจากการเคลื่อนไหว",
       "dosage": {
@@ -318,7 +318,7 @@
       "genericName": "Povidone-Iodine 10% Solution",
       "category": "external",
       "subcategory": "wound",
-      "icon": "🩹",
+      "icon": "🟤",
       "color": "#854D0E",
       "indications": "ฆ่าเชื้อโรคบนผิวหนัง ทำความสะอาดแผลสด แผลถลอก แผลผ่าตัด และป้องกันการติดเชื้อในแผลเล็กน้อย",
       "dosage": {
@@ -370,7 +370,7 @@
       "genericName": "Calamine Lotion (Calamine + Zinc Oxide)",
       "category": "external",
       "subcategory": "skin",
-      "icon": "🧴",
+      "icon": "🩷",
       "color": "#F9A8D4",
       "indications": "บรรเทาอาการคันผิวหนังจากผื่นแพ้ ลมพิษ ผื่นอีสุกอีใส แมลงกัดต่อย แดดเผา และผิวหนังระคายเคือง",
       "dosage": {
@@ -396,7 +396,7 @@
       "genericName": "Aluminium Hydroxide & Magnesium Hydroxide",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "💊",
+      "icon": "⚪",
       "color": "#3B82F6",
       "indications": "บรรเทาอาการจุกเสียด ท้องขึ้น ท้องเฟ้อ และปวดท้องเนื่องจากมีกรดมากในกระเพาะอาหาร หรือแผลในกระเพาะอาหารและลำไส้",
       "dosage": {
@@ -422,7 +422,7 @@
       "genericName": "Aluminium Hydroxide & Magnesium Hydroxide Suspension",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🧪",
+      "icon": "🥛",
       "color": "#60A5FA",
       "indications": "บรรเทาอาการจุกเสียด ท้องขึ้น ท้องเฟ้อ และปวดท้องเนื่องจากมีกรดมากในกระเพาะอาหาร หรือแผลในกระเพาะอาหารและลำไส้",
       "dosage": {
@@ -448,7 +448,7 @@
       "genericName": "Sodium Bicarbonate & Peppermint Oil",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "💊",
+      "icon": "🟢",
       "color": "#93C5FD",
       "indications": "บรรเทาอาการจุกเสียด ท้องขึ้น ท้องเฟ้อ ลดอาการระคายเคืองเนื่องจากมีกรดมากในกระเพาะอาหาร",
       "dosage": {
@@ -473,7 +473,7 @@
       "genericName": "Carminative Mixture",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🧪",
+      "icon": "🍵",
       "color": "#FBBF24",
       "indications": "บรรเทาอาการท้องขึ้น ท้องอืด ท้องเฟ้อ และช่วยขับลมในกระเพาะอาหาร",
       "dosage": {
@@ -498,7 +498,7 @@
       "genericName": "Sodium Bicarbonate Infant Mixture (Gripe Water)",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🧪",
+      "icon": "🍼",
       "color": "#67E8F9",
       "indications": "บรรเทาอาการท้องอืด ท้องขึ้น ท้องเฟ้อ ในเด็กเล็กและทารก เนื่องจากมีกรดในกระเพาะอาหาร",
       "dosage": {
@@ -523,7 +523,7 @@
       "genericName": "Asafetida Tincture 20% w/v",
       "category": "external",
       "subcategory": "stomach",
-      "icon": "🟡",
+      "icon": "🧄",
       "color": "#78350F",
       "indications": "บรรเทาอาการท้องขึ้น ท้องเฟ้อ และปวดท้องในทารกและเด็กเล็ก",
       "dosage": {
@@ -548,7 +548,7 @@
       "genericName": "Aluminium Hydroxide & Magnesium Hydroxide & Simethicone Suspension",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🧪",
+      "icon": "🥤",
       "color": "#2563EB",
       "indications": "บรรเทาอาการจุกเสียด ท้องขึ้น ท้องเฟ้อ ปวดท้องเนื่องจากมีกรดมากในกระเพาะอาหาร หรือแผลในกระเพาะอาหารและลำไส้ และช่วยขับลม",
       "dosage": {
@@ -574,7 +574,7 @@
       "genericName": "Citric Acid & Sodium Bicarbonate & Sodium Carbonate Effervescent",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🫙",
+      "icon": "🫧",
       "color": "#A7F3D0",
       "indications": "ลดกรด บรรเทาอาการท้องอืด ท้องเฟ้อ แน่นท้องเนื่องจากมีกรดมากในกระเพาะอาหาร",
       "dosage": {
@@ -599,7 +599,7 @@
       "genericName": "Simethicone Tablets",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "💊",
+      "icon": "🫓",
       "color": "#10B981",
       "indications": "บรรเทาอาการท้องอืด ท้องเฟ้อ จุกเสียด แน่นท้องเนื่องจากมีแก๊สสะสมในทางเดินอาหาร",
       "dosage": {
@@ -624,7 +624,7 @@
       "genericName": "Sodium Alginate & Sodium Bicarbonate & Calcium Carbonate Tablets",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "💊",
+      "icon": "🟦",
       "color": "#3B82F6",
       "indications": "บรรเทาอาการแสบร้อนกลางอก เรอเปรี้ยว และอาหารไม่ย่อยอันเนื่องมาจากกรดไหลย้อน",
       "dosage": {
@@ -676,7 +676,7 @@
       "genericName": "Glycerin 91% w/w Suppository (Pediatric)",
       "category": "external",
       "subcategory": "stomach",
-      "icon": "🟡",
+      "icon": "🕯️",
       "color": "#A5F3FC",
       "indications": "บรรเทาอาการท้องผูกชั่วคราวในเด็ก ใช้เหน็บทวารหนักเพื่อช่วยในการขับถ่าย",
       "dosage": {
@@ -701,7 +701,7 @@
       "genericName": "Glycerin 91% w/w Suppository (Adult)",
       "category": "external",
       "subcategory": "stomach",
-      "icon": "🟡",
+      "icon": "🕯️",
       "color": "#06B6D4",
       "indications": "บรรเทาอาการท้องผูกชั่วคราวในผู้ใหญ่ ใช้เหน็บทวารหนักเพื่อช่วยในการขับถ่าย",
       "dosage": {
@@ -726,7 +726,7 @@
       "genericName": "Magnesium Hydroxide Suspension (Milk of Magnesia)",
       "category": "internal",
       "subcategory": "stomach",
-      "icon": "🧪",
+      "icon": "🥛",
       "color": "#60A5FA",
       "indications": "เป็นยาระบายเพื่อบรรเทาอาการท้องผูก และสามารถใช้ลดกรดในกระเพาะอาหารได้ด้วย",
       "dosage": {
@@ -752,7 +752,7 @@
       "genericName": "Sodium Chloride 15% w/v Enema",
       "category": "external",
       "subcategory": "stomach",
-      "icon": "💧",
+      "icon": "🪠",
       "color": "#0EA5E9",
       "indications": "บรรเทาอาการท้องผูกรุนแรงหรือท้องผูกชั่วคราว ใช้สวนเข้าทางทวารหนักเพื่อกระตุ้นการถ่ายอุจจาระ",
       "dosage": {
@@ -778,7 +778,7 @@
       "genericName": "Paracetamol (Acetaminophen) 325 mg",
       "category": "internal",
       "subcategory": "pain_fever",
-      "icon": "💊",
+      "icon": "🟥",
       "color": "#EF4444",
       "indications": "ลดไข้ บรรเทาอาการปวดเล็กน้อยถึงปานกลาง เหมาะสำหรับเด็กโตหรือผู้ใหญ่ที่น้ำหนักตัวน้อย (34-50 กก.)",
       "dosage": {
@@ -804,7 +804,7 @@
       "genericName": "Paracetamol Pediatric Syrup 120 mg/5 mL",
       "category": "internal",
       "subcategory": "pain_fever",
-      "icon": "🧪",
+      "icon": "🍓",
       "color": "#FCA5A5",
       "indications": "ลดไข้ บรรเทาอาการปวดในเด็กเล็กและทารกที่มีอาการปวดหรือไข้หวัด",
       "dosage": {
@@ -856,7 +856,7 @@
       "genericName": "Ammonium Carbonate & Glycyrrhiza Fluidextract (Pediatric Cough Syrup)",
       "category": "internal",
       "subcategory": "allergy",
-      "icon": "🧪",
+      "icon": "🧸",
       "color": "#D97706",
       "indications": "บรรเทาอาการไอและช่วยขับเสมหะในเด็กเล็กและเด็กโต",
       "dosage": {
@@ -881,7 +881,7 @@
       "genericName": "Menthol, Camphor & Eucalyptus Inhaler",
       "category": "external",
       "subcategory": "dizziness",
-      "icon": "💨",
+      "icon": "👃",
       "color": "#22D3EE",
       "indications": "บรรเทาอาการวิงเวียนศีรษะ หน้ามืด คลื่นไส้ และบรรเทาอาการคัดจมูกเนื่องจากหวัด",
       "dosage": {
@@ -907,7 +907,7 @@
       "genericName": "Menthol & Camphor & Eucalyptus Ointment (Vaporub Style)",
       "category": "external",
       "subcategory": "dizziness",
-      "icon": "🟡",
+      "icon": "🧴",
       "color": "#0D9488",
       "indications": "บรรเทาอาการคัดจมูก หายใจไม่สะดวกเนื่องจากหวัด และบรรเทาอาการหวัดเบื้องต้นในเด็กและผู้ใหญ่",
       "dosage": {
@@ -933,7 +933,7 @@
       "genericName": "Sodium Chloride Isotonic Eye Wash Solution",
       "category": "external",
       "subcategory": "eye",
-      "icon": "💧",
+      "icon": "👁️",
       "color": "#06B6D4",
       "indications": "ใช้ล้างทำความสะอาดตา บรรเทาอาการแสบตา ระคายเคืองตาอันเนื่องมาจากฝุ่นละออง สิ่งสกปรก ควัน หรือสารเคมีเข้าตา",
       "dosage": {
@@ -959,7 +959,7 @@
       "genericName": "Iodine & Potassium Iodide Throat Paint (Mandl's Paint)",
       "category": "external",
       "subcategory": "mouth_throat",
-      "icon": "🟤",
+      "icon": "🖌️",
       "color": "#9A3412",
       "indications": "บรรเทาอาการอักเสบ เจ็บคอ และต่อมทอนซิลอักเสบเบื้องต้นในช่องปากและลำคอ",
       "dosage": {
@@ -985,7 +985,7 @@
       "genericName": "Gentian Violet 1% w/v Solution",
       "category": "external",
       "subcategory": "mouth_throat",
-      "icon": "🧪",
+      "icon": "💜",
       "color": "#6D28D9",
       "indications": "รักษาโรคเชื้อราในช่องปาก (ฝ้าขาวที่ลิ้น) แผลพุพอง แผลสด แผลติดเชื้อราบนผิวหนัง",
       "dosage": {
@@ -1011,7 +1011,7 @@
       "genericName": "Chlorobutanol & Clove Oil Drops",
       "category": "external",
       "subcategory": "mouth_throat",
-      "icon": "🧪",
+      "icon": "🦷",
       "color": "#78350F",
       "indications": "บรรเทาอาการปวดฟันฟุจากฟันผุชั่วคราว ก่อนที่จะได้รับการรักษาทางทันตกรรม",
       "dosage": {
@@ -1036,7 +1036,7 @@
       "genericName": "Volatile Oils & Herbal Extract Throat Lozenge (Mybacacin style)",
       "category": "internal",
       "subcategory": "mouth_throat",
-      "icon": "💊",
+      "icon": "🍬",
       "color": "#D9F99D",
       "indications": "ช่วยให้ชุ่มคอ บรรเทาอาการระคายคอ คอแห้ง และไอแห้งชั่วคราว",
       "dosage": {
@@ -1061,7 +1061,7 @@
       "genericName": "Amylmetacresol & Dichlorobenzyl Alcohol Throat Lozenge (Strepsils Style)",
       "category": "internal",
       "subcategory": "mouth_throat",
-      "icon": "💊",
+      "icon": "🍭",
       "color": "#EF4444",
       "indications": "บรรเทาอาการเจ็บคอและฆ่าเชื้อโรคในช่องปากและลำคอเบื้องต้น",
       "dosage": {
@@ -1086,7 +1086,7 @@
       "genericName": "Iodine & Potassium Iodide Tincture",
       "category": "external",
       "subcategory": "wound",
-      "icon": "🟤",
+      "icon": "🧪",
       "color": "#B45309",
       "indications": "ใช้ทำความสะอาดและฆ่าเชื้อโรคแผลสด แผลถลอก และรอบแผลทั่วไป",
       "dosage": {
@@ -1112,7 +1112,7 @@
       "genericName": "Thimerosal 0.1% w/v Tincture (Merthiolate)",
       "category": "external",
       "subcategory": "wound",
-      "icon": "🟤",
+      "icon": "🔴",
       "color": "#DC2626",
       "indications": "ใช้ใส่แผลสด แผลถลอก เพื่อฆ่าเชื้อโรคและป้องกันแผลติดเชื้อ",
       "dosage": {
@@ -1137,7 +1137,7 @@
       "genericName": "Isopropyl Alcohol 70% v/v",
       "category": "external",
       "subcategory": "wound",
-      "icon": "💧",
+      "icon": "🧴",
       "color": "#3B82F6",
       "indications": "ใช้ทำความสะอาดผิวหนังรอบแผล เช็ดรอบแผลเพื่อฆ่าเชื้อ และล้างทำความสะอาดเครื่องมือแพทย์",
       "dosage": {
@@ -1163,7 +1163,7 @@
       "genericName": "Ethyl Alcohol 70% v/v (Rubbing Alcohol)",
       "category": "external",
       "subcategory": "wound",
-      "icon": "💧",
+      "icon": "🧴",
       "color": "#60A5FA",
       "indications": "ใช้สำหรับฆ่าเชื้อโรคบนผิวหนัง เช็ดทำความสะอาดรอบบาดแผล และล้างมือเพื่อสุขอนามัย",
       "dosage": {
@@ -1189,7 +1189,7 @@
       "genericName": "Chloroxylenol (Dettol Antiseptic Solution)",
       "category": "external",
       "subcategory": "wound",
-      "icon": "🟤",
+      "icon": "🛡️",
       "color": "#15803D",
       "indications": "ใช้ล้างทำความสะอาดแผลสด แผลถลอก แมลงสัตว์กัดต่อย ฆ่าเชื้อโรคเครื่องมือเครื่องใช้ และชำระล้างร่างกายทั่วไปเพื่อสุขอนามัย",
       "dosage": {
@@ -1214,7 +1214,7 @@
       "genericName": "Benzyl Benzoate 25% w/v Lotion",
       "category": "external",
       "subcategory": "skin",
-      "icon": "🩷",
+      "icon": "🧴",
       "color": "#EC4899",
       "indications": "รักษาโรคหิด เหา และโลน ทั้งในเด็กโตและผู้ใหญ่",
       "dosage": {
@@ -1240,7 +1240,7 @@
       "genericName": "Sublimed Sulphur 10% w/w Ointment",
       "category": "external",
       "subcategory": "skin",
-      "icon": "🟡",
+      "icon": "🟨",
       "color": "#FBBF24",
       "indications": "ใช้รักษาโรคหิด และสามารถรักษาโรคผิวหนังจากเชื้อราบางชนิดในทารกและเด็กเล็กได้ดี",
       "dosage": {
@@ -1266,7 +1266,7 @@
       "genericName": "Benzoic Acid 6% & Salicylic Acid 3% Ointment (Whitfield's Ointment)",
       "category": "external",
       "subcategory": "skin",
-      "icon": "🟡",
+      "icon": "🦶",
       "color": "#D97706",
       "indications": "ใช้รักษาโรคกลาก เกลื้อน และโรคน้ำกัดเท้า (ฮ่องกงฟุต) บรรเทาอาการคันและลอกผิวหนังที่หนาออก",
       "dosage": {
@@ -1292,7 +1292,7 @@
       "genericName": "Coal Tar 1% w/w Lotion or Ointment",
       "category": "external",
       "subcategory": "skin",
-      "icon": "🟡",
+      "icon": "⬛",
       "color": "#1E293B",
       "indications": "รักษาโรคผิวหนังอักเสบเรื้อรัง โรคสะเก็ดเงิน (Psoriasis) ผื่นผิวหนังอักเสบเซบเดิร์ม คันและตกสะเก็ด",
       "dosage": {
@@ -1343,7 +1343,7 @@
       "genericName": "Vitamin B Complex (B1, B2, B6, B12, Niacinamide, Pantothenic acid, Biotin, Folic acid)",
       "category": "internal",
       "subcategory": "tonic",
-      "icon": "💊",
+      "icon": "🐝",
       "color": "#F59E0B",
       "indications": "ป้องกันและรักษาโรคขาดวิตามินบี บำรุงประสาท บรรเทาอาการปลายประสาทอักเสบ อ่อนเพลีย และช่วยฟื้นฟูร่างกายหลังเจ็บป่วย",
       "dosage": {
@@ -1368,7 +1368,7 @@
       "genericName": "Ascorbic Acid (Vitamin C) 100 mg",
       "category": "internal",
       "subcategory": "tonic",
-      "icon": "💊",
+      "icon": "🍊",
       "color": "#F97316",
       "indications": "ป้องกันและรักษาโรคลักปิดลักเปิด (เลือดออกตามไรฟัน) และช่วยบำรุงหลอดเลือดฝอยและเนื้อเยื่อให้แข็งแรง",
       "dosage": {
@@ -1393,7 +1393,7 @@
       "genericName": "Ferrous Sulfate (Equivalent to Iron 60 mg)",
       "category": "internal",
       "subcategory": "tonic",
-      "icon": "💊",
+      "icon": "🩸",
       "color": "#DC2626",
       "indications": "รักษาโรคโลหิตจางจากการขาดธาตุเหล็ก บำรุงโลหิตในหญิงตั้งครรภ์ หญิงให้นมบุตร หรือสตรีมีรอบเดือน",
       "dosage": {
@@ -1419,7 +1419,7 @@
       "genericName": "Multivitamins (Vitamin A, D, B1, B2, B6, B12, Niacinamide, Folic acid, Vitamin C)",
       "category": "internal",
       "subcategory": "tonic",
-      "icon": "💊",
+      "icon": "🌈",
       "color": "#FBBF24",
       "indications": "บำรุงร่างกายในผู้ที่เบื่ออาหาร ขาดสารอาหาร ร่างกายอ่อนเพลีย หรือระหว่างฟื้นไข้เพื่อเพิ่มสารอาหาร",
       "dosage": {
@@ -1444,7 +1444,7 @@
       "genericName": "Cod Liver Oil Capsules (Vitamin A & Vitamin D)",
       "category": "internal",
       "subcategory": "tonic",
-      "icon": "💊",
+      "icon": "🐟",
       "color": "#F59E0B",
       "indications": "ป้องกันการขาดวิตามินเอและดี บำรุงร่างกาย บำรุงกระดูกและฟันในผู้ใหญ่และวัยเจริญเติบโต",
       "dosage": {
@@ -1469,7 +1469,7 @@
       "genericName": "Cod Liver Oil Liquid Emulsion (Vitamin A & Vitamin D)",
       "category": "internal",
       "subcategory": "tonic",
-      "icon": "🧪",
+      "icon": "🐳",
       "color": "#D97706",
       "indications": "ป้องกันการขาดวิตามินเอและดี ช่วยเสริมสร้างกระดูกและฟันให้แข็งแรงในเด็กเล็กและวัยกำลังเจริญเติบโต",
       "dosage": {

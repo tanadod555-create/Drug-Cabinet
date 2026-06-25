@@ -21,6 +21,67 @@ interface Shelf {
 
 // Emojis are directly defined in medicines.json
 
+function getShortName(med: Medicine): string {
+  const shortNames: Record<string, string> = {
+    // Group 1
+    antacid_alumina_magnesia_tablets: "ลดกรด (เม็ด)",
+    antacid_alumina_magnesia_suspension: "ลดกรด (น้ำ)",
+    sodamint_tablets: "โซดามินท์",
+    carminative_mixture: "ยาขับลมน้ำ",
+    sodium_bicarbonate_infant_mixture: "แก้ท้องอืด (เด็ก)",
+    mahahing_tincture: "มหาหิงคุ์",
+    antacid_simethicone_suspension: "ลดกรดผสมขับลม (น้ำ)",
+    antacid: "ลดกรดผสมขับลม (เม็ด)",
+    citric_bicarbonate_effervescent: "ผงฟู่ลดกรด",
+    simethicone_tablets: "ไซเมทิโคน",
+    gaviscon_tablets: "กรดไหลย้อน (เม็ด)",
+    gaviscon_liquid: "กรดไหลย้อน (น้ำ)",
+    // Group 3
+    glycerin_suppository_child: "เหน็บทวาร (เด็ก)",
+    glycerin_suppository_adult: "เหน็บทวาร (ผู้ใหญ่)",
+    magnesium_hydroxide_mixture: "ระบายแมกนีเซีย",
+    sodium_chloride_enema: "ยาสวนทวาร",
+    // Group 5
+    paracetamol_325mg: "พาราฯ 325 มก.",
+    paracetamol: "พาราฯ 500 มก.",
+    paracetamol_syrup_child: "พาราฯ น้ำ (เด็ก)",
+    pain_relief_plaster: "พลาสเตอร์ปวด",
+    // Group 7
+    cough_mixture_child: "แก้ไอ น้ำ (เด็ก)",
+    // Group 8
+    inhaler_menthol_camphor: "ยาดมคัดจมูก",
+    vaporizing_ointment: "ยาทาระเหย (หวัด)",
+    // Group 10
+    eye_wash_saline: "ยาล้างตา",
+    // Group 11
+    throat_paint_iodine: "ยากวาดคอ",
+    gentian_violet_solution: "เยนเชี่ยนไวโอเลต",
+    toothache_drops: "ยาแก้ปวดฟัน",
+    throat_lozenge_herbal: "ยาอมชุ่มคอ",
+    throat_lozenge_chemical: "ยาอมแก้เจ็บคอ",
+    // Group 12
+    tincture_iodine: "ทิงเจอร์ไอโอดีน",
+    tincture_thimerosal: "ทิงเจอร์แดง",
+    isopropyl_alcohol_70: "IPA แอลกอฮอล์",
+    ethyl_alcohol_70: "เอทิลแอลกอฮอล์",
+    chloroxylenol_antiseptic: "น้ำยาฆ่าเชื้อโรค",
+    // Group 15
+    benzyl_benzoate_lotion: "รักษาหิดเหา (BB)",
+    sulphur_ointment_10: "ขี้ผึ้งกำมะถัน",
+    benzoic_salicylic_ointment: "รักษาน้ำกัดเท้า",
+    coal_tar_ointment: "รักษาผิวหนังเรื้อรัง",
+    sodium_thiosulfate_powder: "รักษาเกลื้อน",
+    // Group 16
+    vitamin_b_complex: "วิตามินบีรวม",
+    vitamin_c_100mg: "วิตามินซี 100 มก.",
+    ferrous_sulfate_tablets: "ยาบำรุงโลหิต",
+    multivitamin_tablets: "วิตามินรวม",
+    cod_liver_oil_capsules: "น้ำมันตับปลา (แคป)",
+    cod_liver_oil_liquid: "น้ำมันตับปลา (น้ำ)"
+  }
+  return shortNames[med.id] || med.name.replace('ยา', '').trim();
+}
+
 const containerVariants = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.07 } },
@@ -261,7 +322,7 @@ export function MedicineCabinet({
                         whileHover={{ scale: isDimmed ? 1 : 1.08, zIndex: 10 }}
                         whileTap={{ scale: 0.95 }}
                         className="relative flex-shrink-0 cursor-pointer group"
-                        style={{ width: 80, height: 90 }}
+                        style={{ width: 92, height: 102 }}
                       >
                         {/* Glow when highlighted */}
                         {isHighlighted && (
@@ -304,7 +365,7 @@ export function MedicineCabinet({
                           <div
                             className="text-center leading-tight px-1 pb-1 z-10"
                             style={{
-                              fontSize: 10,
+                              fontSize: 9.5,
                               fontWeight: 600,
                               color: '#2C1810',
                               fontFamily: 'Sarabun, sans-serif',
@@ -314,7 +375,7 @@ export function MedicineCabinet({
                               WebkitBoxOrient: 'vertical',
                             }}
                           >
-                            {med.name.replace('ยา', '').trim()}
+                            {getShortName(med)}
                           </div>
                         </div>
 
