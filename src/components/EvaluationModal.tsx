@@ -2,6 +2,8 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Star, Clipboard, Check } from 'lucide-react'
 
+const GOOGLE_SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL || ""
+
 interface EvaluationModalProps {
   isOpen: boolean
   onClose: () => void
@@ -53,6 +55,7 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
   const [comment, setComment] = React.useState('')
   const [submitted, setSubmitted] = React.useState(false)
   const [copied, setCopied] = React.useState(false)
+  const [isSending, setIsSending] = React.useState(false)
   const [error, setError] = React.useState('')
 
   React.useEffect(() => {
@@ -123,7 +126,7 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
     }
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // Validate that all questions are answered
     const unanswered = Object.entries(ratings).filter(([_, rating]) => rating === 0)
     if (unanswered.length > 0) {
@@ -131,14 +134,39 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
       return
     }
 
+    setIsSending(true)
+    setError('')
+
     const evaluationData = {
-      ratings,
-      comment,
-      timestamp: new Date().toISOString()
+      q1: ratings[1],
+      q2: ratings[2],
+      q3: ratings[3],
+      q4: ratings[4],
+      q5: ratings[5],
+      comment: comment,
+      timestamp: new Date().toLocaleString('th-TH')
     }
 
     // Save to localStorage
-    localStorage.setItem('cabinet_evaluation', JSON.stringify(evaluationData))
+    localStorage.setItem('cabinet_evaluation', JSON.stringify({ ratings, comment }))
+
+    // Post to Google Sheet Web App if URL is provided
+    if (GOOGLE_SHEET_URL) {
+      try {
+        await fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors', // standard redirect bypass for Google Apps Script Web Apps
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(evaluationData),
+        })
+      } catch (err) {
+        console.error('Failed to submit evaluation to Google Sheets', err)
+      }
+    }
+
+    setIsSending(false)
     setSubmitted(true)
 
     // Automatically copy the result text
@@ -329,13 +357,14 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
                 </button>
                 <button
                   onClick={handleSubmit}
-                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white shadow-md hover:shadow-lg transition-all"
+                  disabled={isSending}
+                  className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white shadow-md hover:shadow-lg transition-all disabled:opacity-50"
                   style={{
                     background: 'linear-gradient(135deg, #10B981, #059669)',
                     fontFamily: 'Kanit, sans-serif',
                   }}
                 >
-                  บันทึกและคัดลอกผล →
+                  {isSending ? 'กำลังส่งข้อมูล...' : 'บันทึกและส่งประเมิน →'}
                 </button>
               </div>
             )}
