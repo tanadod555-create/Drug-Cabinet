@@ -62,11 +62,12 @@
       "color": "#34D399",
       "indications": "ทดแทนน้ำและเกลือแร่ที่สูญเสียจากท้องเสีย อาเจียน เหงื่อออกมาก หรือออกกำลังกายหนัก ป้องกันและรักษาภาวะขาดน้ำ",
       "dosage": {
-        "adult": "ละลายผงใน 1 ซอง (27.9 กรัม) ในน้ำสะอาด 1 ลิตร คนให้ละลาย ดื่มช้าๆ ตามต้องการ ครั้งละ 200–400 มล.",
-        "child": "เด็กน้ำหนักต่ำกว่า 20 กก.: ดื่ม 75 มล./กก. ใน 4 ชั่วโมงแรก เด็กโต: ดื่มตามต้องการ ไม่จำกัด ชั่วโมงละ 100–200 มล.",
-        "maxPerDay": "ดื่มได้ตามต้องการ — ไม่มีขีดจำกัด ขึ้นอยู่กับความรุนแรงของการขาดน้ำ"
+        "adult": "ให้ดื่มสารละลายของผงน้ำตาลเกลือแร่ประมาณ 200 ถึง 400 มิลลิลิตร ต่อการถ่ายอุจจาระ 1 ครั้ง",
+        "child": "เด็กทารก (อายุ 1 เดือนถึงไม่เกิน 12 เดือน): ให้ดื่มสารละลายของผงน้ำตาลเกลือแร่ประมาณหนึ่งเท่าครึ่งของปริมาตรของเหลว (น้ำและนม) ที่ป้อนให้ดื่มตามปกติ / เด็กเล็กและเด็กโต (อายุ 1 ถึง 12 ปี): ให้ดื่มสารละลายของผงน้ำตาลเกลือแร่ประมาณ 200 ถึง 400 มิลลิลิตร ต่อการถ่ายอุจจาระ 1 ครั้ง",
+        "maxPerDay": "ดื่มได้ต่อเนื่องเรื่อยๆ จนกว่าจะหยุดอาการท้องร่วง — ไม่มีขีดจำกัด ขึ้นอยู่กับความรุนแรงของการขาดน้ำ"
       },
       "warnings": [
+        "ดื่มสารละลายของผงน้ำตาลเกลือแร่ตามขนาดของยาของคนในแต่ละอายุ ดื่มต่อเนื่องเรื่อยๆ จนกว่าจะหยุดอาการท้องร่วง แต่ถ้าอาการไม่ดีขึ้นให้นำส่งโรงพยาบาล",
         "ใช้ผงที่ละลายแล้วภายใน 24 ชั่วโมง ทิ้งส่วนที่เหลือ",
         "ห้ามใช้น้ำร้อนในการละลาย เพราะจะทำให้สูญเสียประสิทธิภาพ",
         "ถ้าท้องเสียรุนแรง มีเลือดปน หรือเด็กซึม ควรรีบพบแพทย์ทันที"
@@ -102,7 +103,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ฉลากต้องระบุขนาดอนุภาคถ่าน (mesh size) และวัตถุประสงค์การใช้",
       "shelfLife": "3 ปี (ถ้าเก็บถูกต้อง)",
-      "isMOPHRecommended": false
+      "isMOPHRecommended": true
     },
     {
       "id": "senna_laxative",
@@ -415,7 +416,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ต้องมีคำว่า 'ยาสามัญประจำบ้าน' ในกรอบสีเขียว เลขทะเบียน Reg.No. และระบุส่วนประกอบชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "sodamint_tablets",
@@ -440,7 +441,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบ Sodium Bicarbonate 300 มก. ต่อเม็ด และเลขทะเบียน Reg.No.",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "carminative_mixture",
@@ -465,7 +466,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณแอลกอฮอล์และคำเตือนบนฉลากชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "sodium_bicarbonate_infant_mixture",
@@ -490,7 +491,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุตัวยาสำคัญ Sodium Bicarbonate 50 มก./5 มล. และห้ามใช้แอลกอฮอล์",
       "shelfLife": "2 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "mahahing_tincture",
@@ -515,7 +516,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุคำเตือน 'ยาใช้ภายนอก ห้ามรับประทาน' สีแดงชัดเจนบนฉลาก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "antacid_simethicone_suspension",
@@ -668,7 +669,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Glycerin 91% w/w น้ำหนักแท่งยาไม่เกิน 1.5 กรัม และคำว่าสำหรับเด็ก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "glycerin_suppository_adult",
@@ -693,7 +694,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Glycerin 91% w/w น้ำหนักแท่งยาประมาณ 2.55 กรัม และข้อความสำหรับผู้ใหญ่",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "magnesium_hydroxide_mixture",
@@ -719,7 +720,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Magnesium Hydroxide 1.2 กรัมต่อ 15 มล. และคำเตือนผู้ป่วยโรคไต",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "sodium_chloride_enema",
@@ -745,7 +746,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุความเข้มข้น Sodium Chloride 15% w/v และคำว่า 'ยาใช้เฉพาะที่ ห้ามรับประทาน'",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "paracetamol_325mg",
@@ -771,7 +772,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาด Paracetamol 325 มก. ต่อเม็ด และมีคำว่า 'ยาสามัญประจำบ้าน' ชัดเจน",
       "shelfLife": "5 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "paracetamol_syrup_child",
@@ -797,7 +798,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรงชัดเจน 120 มก./5 มล. ปราศจากแอลกอฮอล์ และคำเตือนเรื่องการทำลายตับ",
       "shelfLife": "3 ปี (หลังเปิดขวดใช้ได้ 3 เดือน)",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "pain_relief_plaster",
@@ -823,7 +824,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบหลักที่แผ่นพลาสเตอร์ และข้อห้ามใช้กับแผลสด",
       "shelfLife": "3 ปี (ซองที่ยังไม่เปิด)",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "cough_mixture_child",
@@ -848,7 +849,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุตัวยาสำคัญต่อ 5 มล. (Ammonium Carbonate 20 มก. และ Glycyrrhiza 0.25 มล.) ชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "inhaler_menthol_camphor",
@@ -874,7 +875,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Menthol, Camphor, Eucalyptus Oil ชัดเจน และห้ามใช้ในเด็กเล็ก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "vaporizing_ointment",
@@ -900,7 +901,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบหลักและข้อความ 'ห้ามทาในรูจมูก และห้ามใช้ในเด็กต่ำกว่า 2 ปี'",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "eye_wash_saline",
@@ -926,7 +927,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบเกลือแร่ Isotonic pH 6-8 และระบุวันหมดอายุหลังเปิดขวดชัดเจน",
       "shelfLife": "2 ปี (เปิดใช้แล้วใช้ได้ 30 วัน)",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "throat_paint_iodine",
@@ -952,7 +953,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุสัดส่วน Iodine 1.25% และ Potassium Iodide 2.5% และคำเตือนเรื่องการกลืน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "gentian_violet_solution",
@@ -978,7 +979,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุตัวยาสำคัญ Gentian Violet 1% w/v และมีข้อความระบุใช้ทาแผลเชื้อราในปากและผิวหนัง",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "toothache_drops",
@@ -1003,7 +1004,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบหลักกานพลูและ Chlorobutanol ชัดเจน และคำเตือนหลีกเลี่ยงการถูกเหงือก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "throat_lozenge_herbal",
@@ -1028,7 +1029,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบสมุนไพร/น้ำมันหอมระเหย (เช่น ชะเอมเทศ, กานพลู, ขิง) ชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "throat_lozenge_chemical",
@@ -1053,7 +1054,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรงยาปฏิชีวนะฆ่าเชื้อในช่องปาก อัตราส่วนสารสำคัญชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "tincture_iodine",
@@ -1079,7 +1080,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความเข้มข้น Iodine 2.0-2.5% และมีข้อความเตือนยาอันตรายใช้ภายนอก",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "tincture_thimerosal",
@@ -1104,7 +1105,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุ Thimerosal 0.1% w/v และมีตัวหนังสือสีแดงเตือนระวังสารประกอบปรอท",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "isopropyl_alcohol_70",
@@ -1130,7 +1131,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุ Isopropyl Alcohol 70% v/v และแต่งสีน้ำเงิน (Brilliant Blue C.I. No.42090)",
       "shelfLife": "5 ปี (หลังเปิดใช้ขวดปิดสนิทใช้ได้ 1 ปี)",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "ethyl_alcohol_70",
@@ -1156,7 +1157,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุ Ethyl Alcohol 70% v/v ชัดเจน แต่งสีน้ำเงิน Brilliant Blue และข้อควรระวังติดไฟ",
       "shelfLife": "5 ปี (หลังเปิดใช้ขวดปิดสนิทใช้ได้ 1 ปี)",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "chloroxylenol_antiseptic",
@@ -1207,7 +1208,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุ Benzyl Benzoate 25% w/v ชนิดโลชั่นคำเตือนห้ามกิน และสำหรับเด็กให้เจือจาง",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "sulphur_ointment_10",
@@ -1233,7 +1234,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Sublimed Sulphur 10% w/w ชนิดขี้ผึ้งทาผิวหนัง และคำเตือนห้ามรับประทาน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "benzoic_salicylic_ointment",
@@ -1259,7 +1260,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุตัวยาสำคัญ Benzoic Acid, Salicylic Acid เปอร์เซ็นต์ชัดเจน และมีคุณสมบัติผลัดเซลล์ผิว",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "coal_tar_ointment",
@@ -1285,7 +1286,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณ Coal Tar 1% w/w และมีคำเตือนระวังปฏิกิริยากับแสงแดด",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "sodium_thiosulfate_powder",
@@ -1310,7 +1311,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุเกลือโซเดียมไทโอซัลเฟต 100% w/w และวิธีเจือจางผสมน้ำใช้ล้างทาผิวหนัง",
       "shelfLife": "3 ปี (ผงแห้งในซอง)",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "vitamin_b_complex",
@@ -1335,7 +1336,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรงและชนิดของวิตามินบีในสูตรตำรับชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "vitamin_c_100mg",
@@ -1360,7 +1361,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรง Vitamin C 100 มก. ต่อเม็ด และแต่งกลิ่นส้มชวนอมเคี้ยว",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "ferrous_sulfate_tablets",
@@ -1386,7 +1387,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณเหล็กเทียบเท่า Iron 60 มก. และคำเตือนเรื่องอุจจาระดำ",
       "shelfLife": "5 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "multivitamin_tablets",
@@ -1411,7 +1412,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุส่วนประกอบขนาดความแรงของวิตามินแต่ละชนิดละเอียด และข้อควรระวังในสตรีมีครรภ์",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "cod_liver_oil_capsules",
@@ -1436,7 +1437,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุปริมาณน้ำมันตับปลาและขนาดความแรงเทียบเท่า Vitamin A และ Vitamin D ชัดเจน",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "cod_liver_oil_liquid",
@@ -1461,7 +1462,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ระบุขนาดความแรงเทียบเท่า Vitamin A และ D ต่อ 5 มล. ชัดเจน และระบุวันหมดอายุ",
       "shelfLife": "2 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "eye_drops_sulfacetamide",
@@ -1487,7 +1488,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ต้องระบุเลขทะเบียนทะเบียนตำรับยา วันหมดอายุ และมีฉลากเตือนเรื่องการใช้ยาหยอดตาอย่างถูกต้อง",
       "shelfLife": "1 เดือน หลังเปิดขวดใช้",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     },
     {
       "id": "silver_sulfadiazine_cream",
@@ -1513,7 +1514,7 @@
       "isEmergencyKit": false,
       "labelCheck": "ต้องระบุเลขทะเบียนทะเบียนตำรับยา วันหมดอายุ และมีฉลากเตือนเรื่องการแพ้ยาซัลฟา",
       "shelfLife": "3 ปี นับจากวันผลิต",
-      "isMOPHRecommended": true
+      "isMOPHRecommended": false
     }
   ]
 }
