@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Kanit:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-cabinet-wood: #C8A265;
+  --color-cabinet-bg: #F5ECD7;
+  --color-shelf: #B8923A;
+  --color-internal: #3B82F6;
+  --color-external: #22C55E;
+  --color-painkiller: #EF4444;
+  --color-emergency: #DC2626;
+  --color-safe: #16A34A;
+  --color-warning: #D97706;
+  --color-danger: #DC2626;
+  --color-wood-dark: #8B5E2A;
+  --color-wood-light: #E8C890;
+  --color-bg: #FDF8F0;
+  --color-text: #2C1810;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sarabun', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabinet-shelf {
+  background: linear-gradient(
+    180deg,
+    #A07830 0%,
+    #C8A265 30%,
+    #D4B07A 50%,
+    #B8923A 100%
+  );
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    inset 0 -2px 4px rgba(0,0,0,0.3);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5ECD7;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8A265;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8923A;
+}
+
+/* Emergency pulse animation */
+@keyframes emergency-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+  50% { opacity: 0.9; box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+}
+
+.emergency-btn {
+  animation: emergency-pulse 2s infinite;
+}
+
+/* Badge pill */
+.badge-official {
+  background: linear-gradient(135deg, #16A34A, #15803D);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
