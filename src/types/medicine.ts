@@ -16,6 +16,10 @@ export type Subcategory =
   | "wound"
   | "skin"
   | "external_pain"
+  | "eye"
+  | "mouth_throat"
+  | "cough"
+  | "tonic"
 
 export interface Medicine {
   id: string
@@ -33,6 +37,7 @@ export interface Medicine {
   isEmergencyKit: boolean
   labelCheck: string
   shelfLife: string
+  isMOPHRecommended?: boolean
 }
 
 export type InteractionLevel = "safe" | "warning" | "danger"

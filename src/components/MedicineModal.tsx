@@ -12,12 +12,7 @@ interface MedicineModalProps {
   onToggleCabinet: (id: string) => void
 }
 
-const MEDICINE_ICONS: Record<string, string> = {
-  tablets: '💊', bottle: '🧪', sachet: '🫙', charcoal: '⬛',
-  leaf: '🌿', worm: '🟡', pill: '💊', allergen: '🌸',
-  syrup: '🍶', inhaler: '💨', ointment: '🟡', motion: '🌀',
-  antiseptic: '🟤', saline: '💧', lotion: '🩷',
-}
+// Emojis are directly defined in medicines.json
 
 const SUBCATEGORY_LABELS: Record<string, string> = {
   stomach: 'ระบบทางเดินอาหาร',
@@ -76,18 +71,7 @@ export function MedicineModal({ medicine, onClose, isInChecker, onAddToChecker, 
                       border: `2px solid ${medicine.color}40`,
                     }}
                   >
-                    <img 
-                      src={`/medicines/${medicine.id}.png`} 
-                      alt={medicine.name}
-                      className="w-12 h-12 object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        if (e.currentTarget.nextElementSibling) {
-                          (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
-                        }
-                      }}
-                    />
-                    <div className="text-4xl hidden">{MEDICINE_ICONS[medicine.icon] ?? '💊'}</div>
+                    <div className="text-4xl">{medicine.icon || '💊'}</div>
                   </div>
 
                   <div className="flex-1 min-w-0">

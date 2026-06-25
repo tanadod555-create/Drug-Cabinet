@@ -12,12 +12,7 @@ interface SafetyCheckerProps {
   onAddFromLibrary: (medicine: Medicine) => void
 }
 
-const MEDICINE_ICONS: Record<string, string> = {
-  tablets: '💊', bottle: '🧪', sachet: '🫙', charcoal: '⬛',
-  leaf: '🌿', worm: '🟡', pill: '💊', allergen: '🌸',
-  syrup: '🍶', inhaler: '💨', ointment: '🟡', motion: '🌀',
-  antiseptic: '🟤', saline: '💧', lotion: '🩷',
-}
+// Emojis are directly defined in medicines.json
 
 export function SafetyChecker({
   medicines,
@@ -129,7 +124,7 @@ ${result?.details.map((d, i) => `${i + 1}. ${d}`).join('\n')}
                   color: '#2C1810',
                 }}
               >
-                <span>{MEDICINE_ICONS[med.icon] ?? '💊'}</span>
+                <span>{med.icon || '💊'}</span>
                 <span className="font-medium">{med.name}</span>
                 <button
                   onClick={() => { onRemoveFromChecker(med.id); setResult(null) }}
@@ -186,7 +181,7 @@ ${result?.details.map((d, i) => `${i + 1}. ${d}`).join('\n')}
                         color: '#2C1810',
                       }}
                     >
-                      <span>{MEDICINE_ICONS[med.icon] ?? '💊'}</span>
+                      <span>{med.icon || '💊'}</span>
                       {med.name}
                     </button>
                   ))}

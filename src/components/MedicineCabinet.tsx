@@ -19,12 +19,7 @@ interface Shelf {
   medicines: Medicine[]
 }
 
-const MEDICINE_ICONS: Record<string, string> = {
-  tablets: '💊', bottle: '🧪', sachet: '🫙', charcoal: '⬛',
-  leaf: '🌿', worm: '🟡', pill: '💊', allergen: '🌸',
-  syrup: '🍶', inhaler: '💨', ointment: '🟡', motion: '🌀',
-  antiseptic: '🟤', saline: '💧', lotion: '🩷',
-}
+// Emojis are directly defined in medicines.json
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -44,12 +39,14 @@ export function MedicineCabinet({
   ownedIds,
   onToggleCabinet,
 }: MedicineCabinetProps) {
-  const [tab, setTab] = React.useState<'mine' | 'ideal'>('mine')
+  const [tab, setTab] = React.useState<'mine' | 'recommended' | 'all'>('recommended')
   const isSearching = highlightedIds.length > 0
 
   const safeOwnedIds = ownedIds ?? []
   const displayMedicines = tab === 'mine'
     ? medicines.filter((m) => safeOwnedIds.includes(m.id))
+    : tab === 'recommended'
+    ? medicines.filter((m) => m.isMOPHRecommended)
     : medicines
 
   const shelves: Shelf[] = [
@@ -66,7 +63,7 @@ export function MedicineCabinet({
       medicines: displayMedicines.filter(
         (m) =>
           m.category === 'internal' &&
-          ['pain_fever', 'allergy', 'dizziness', 'motion_sickness'].includes(m.subcategory)
+          ['pain_fever', 'allergy', 'dizziness', 'motion_sickness', 'cough', 'tonic', 'mouth_throat'].includes(m.subcategory)
       ),
     },
     {
@@ -80,10 +77,10 @@ export function MedicineCabinet({
     <div className="w-full max-w-5xl mx-auto px-4 py-6">
 
       {/* Tab toggle */}
-      <div className="flex items-center gap-2 mb-5 justify-center">
+      <div className="flex flex-wrap items-center gap-2 mb-5 justify-center">
         <button
           onClick={() => setTab('mine')}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs md:text-sm transition-all"
           style={{
             background: tab === 'mine'
               ? 'linear-gradient(135deg, #C8A265, #B8923A)'
@@ -108,24 +105,48 @@ export function MedicineCabinet({
           )}
         </button>
         <button
-          onClick={() => setTab('ideal')}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all"
+          onClick={() => setTab('recommended')}
+          className="flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs md:text-sm transition-all"
           style={{
-            background: tab === 'ideal'
-              ? 'linear-gradient(135deg, #3B82F6, #2563EB)'
+            background: tab === 'recommended'
+              ? 'linear-gradient(135deg, #10B981, #059669)'
               : 'white',
-            color: tab === 'ideal' ? 'white' : '#6B7280',
-            border: tab === 'ideal' ? 'none' : '1.5px solid #E5D9C9',
-            boxShadow: tab === 'ideal' ? '0 4px 15px rgba(59,130,246,0.4)' : 'none',
+            color: tab === 'recommended' ? 'white' : '#6B7280',
+            border: tab === 'recommended' ? 'none' : '1.5px solid #E5D9C9',
+            boxShadow: tab === 'recommended' ? '0 4px 15px rgba(16,185,129,0.4)' : 'none',
             fontFamily: 'Kanit, sans-serif',
           }}
         >
-          ✨ ยาแนะนำทั้งหมด
+          ✨ 15 ยาหลักแนะนำ
           <span
             className="text-xs px-1.5 py-0.5 rounded-full"
             style={{
-              background: tab === 'ideal' ? 'rgba(255,255,255,0.25)' : '#EFF6FF',
-              color: tab === 'ideal' ? 'white' : '#3B82F6',
+              background: tab === 'recommended' ? 'rgba(255,255,255,0.25)' : '#D1FAE5',
+              color: tab === 'recommended' ? 'white' : '#10B981',
+            }}
+          >
+            {medicines.filter(m => m.isMOPHRecommended).length}
+          </span>
+        </button>
+        <button
+          onClick={() => setTab('all')}
+          className="flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs md:text-sm transition-all"
+          style={{
+            background: tab === 'all'
+              ? 'linear-gradient(135deg, #3B82F6, #2563EB)'
+              : 'white',
+            color: tab === 'all' ? 'white' : '#6B7280',
+            border: tab === 'all' ? 'none' : '1.5px solid #E5D9C9',
+            boxShadow: tab === 'all' ? '0 4px 15px rgba(59,130,246,0.4)' : 'none',
+            fontFamily: 'Kanit, sans-serif',
+          }}
+        >
+          📚 คลังยาสามัญทั้งหมด
+          <span
+            className="text-xs px-1.5 py-0.5 rounded-full"
+            style={{
+              background: tab === 'all' ? 'rgba(255,255,255,0.25)' : '#EFF6FF',
+              color: tab === 'all' ? 'white' : '#3B82F6',
             }}
           >
             {medicines.length}
@@ -183,10 +204,10 @@ export function MedicineCabinet({
               ตู้ยาของคุณยังว่างอยู่
             </p>
             <p className="text-sm mb-4" style={{ color: '#9CA3AF' }}>
-              กดแท็บ "ยาแนะนำทั้งหมด" เพื่อดูรายการยา<br />แล้วกด + เพื่อเพิ่มยาที่คุณมีเข้าตู้
+              กดแท็บ "15 ยาหลักแนะนำ" หรือ "คลังยาสามัญทั้งหมด" เพื่อดูรายการยา<br />แล้วกด + เพื่อเพิ่มยาที่คุณมีเข้าตู้
             </p>
             <button
-              onClick={() => setTab('ideal')}
+              onClick={() => setTab('recommended')}
               className="px-5 py-2 rounded-xl text-sm font-semibold"
               style={{
                 background: 'linear-gradient(135deg, #C8A265, #B8923A)',
@@ -194,7 +215,7 @@ export function MedicineCabinet({
                 fontFamily: 'Kanit, sans-serif',
               }}
             >
-              ดูยาแนะนำ →
+              ดูยาแนะนำ MOPH →
             </button>
           </motion.div>
         )}
@@ -254,7 +275,7 @@ export function MedicineCabinet({
                           style={{
                             background: isOwned
                               ? `linear-gradient(135deg, ${med.color}30, ${med.color}15)`
-                              : tab === 'ideal'
+                              : tab !== 'mine'
                               ? 'linear-gradient(135deg, #fff 0%, rgba(200,162,101,0.08) 100%)'
                               : `linear-gradient(135deg, white, ${med.color}15)`,
                             border: isOwned
@@ -275,20 +296,9 @@ export function MedicineCabinet({
                             </div>
                           )}
 
-                          {/* Image with Fallback */}
+                          {/* Medicine Emoji */}
                           <div className="flex-1 flex items-center justify-center relative w-full h-full p-2 pb-0">
-                            <img 
-                              src={`/medicines/${med.id}.png`} 
-                              alt={med.name}
-                              className="w-full h-full object-contain drop-shadow-md z-0"
-                              onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                                if (e.currentTarget.nextElementSibling) {
-                                  (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
-                                }
-                              }}
-                            />
-                            <div className="text-3xl leading-none hidden z-0">{MEDICINE_ICONS[med.icon] ?? '💊'}</div>
+                            <div className="text-3xl leading-none z-0">{med.icon || '💊'}</div>
                           </div>
 
                           <div

@@ -11,24 +11,6 @@ interface MedicineItemProps {
   isDimmed: boolean
 }
 
-const MEDICINE_ICONS: Record<string, string> = {
-  tablets: '💊',
-  bottle: '🧪',
-  sachet: '🫙',
-  charcoal: '⬛',
-  leaf: '🌿',
-  worm: '🟡',
-  pill: '💊',
-  allergen: '🌸',
-  syrup: '🍶',
-  inhaler: '💨',
-  ointment: '🟡',
-  motion: '🌀',
-  antiseptic: '🟤',
-  saline: '💧',
-  lotion: '🩷',
-}
-
 export function MedicineItem({
   medicine,
   onSelect,
@@ -37,7 +19,7 @@ export function MedicineItem({
   isHighlighted,
   isDimmed,
 }: MedicineItemProps) {
-  const icon = MEDICINE_ICONS[medicine.icon] ?? '💊'
+  const icon = medicine.icon || '💊'
 
   return (
     <motion.div
