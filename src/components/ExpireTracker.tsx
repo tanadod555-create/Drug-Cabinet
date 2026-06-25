@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Trash2, ClipboardList, RefreshCw } from 'lucide-react'
-import { Medicine, ExpireEntry } from '../types/medicine'
+import { Medicine } from '../types/medicine'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 
 interface ExpireTrackerProps {

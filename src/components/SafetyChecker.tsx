@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Shield, AlertTriangle, CheckCircle, XCircle, Printer } from 'lucide-react'
 import { Medicine, CheckResult } from '../types/medicine'
