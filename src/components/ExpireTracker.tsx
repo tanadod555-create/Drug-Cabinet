@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Trash2, ClipboardList, RefreshCw } from 'lucide-react'
-import { Medicine } from '../types/medicine'
-import { useLocalStorage } from '../hooks/useLocalStorage'
+import { Medicine, ExpireEntry } from '../types/medicine'
 
 interface ExpireTrackerProps {
   medicines: Medicine[]
+  entries: ExpireEntry[]
+  addEntry: (entry: Omit<ExpireEntry, 'id' | 'daysLeft'>) => void
+  removeEntry: (id: string) => void
+  refreshDaysLeft: () => void
 }
 
 function getShelfLifeYears(shelfLife: string): number {
@@ -20,8 +23,13 @@ function getDaysLeftColor(days: number) {
   return { bg: '#F0FDF4', border: '#86EFAC', text: '#16A34A', label: `เหลือ ${days} วัน`, dot: '#16A34A' }
 }
 
-export function ExpireTracker({ medicines }: ExpireTrackerProps) {
-  const { entries, addEntry, removeEntry, refreshDaysLeft } = useLocalStorage()
+export function ExpireTracker({
+  medicines,
+  entries,
+  addEntry,
+  removeEntry,
+  refreshDaysLeft,
+}: ExpireTrackerProps) {
   const [selectedId, setSelectedId] = useState('')
   const [purchaseDate, setPurchaseDate] = useState(new Date().toISOString().split('T')[0])
   const [customExpiry, setCustomExpiry] = useState('')

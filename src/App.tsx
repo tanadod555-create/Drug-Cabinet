@@ -7,7 +7,7 @@ import { SymptomGuide } from './components/SymptomGuide'
 import { ExpireTracker } from './components/ExpireTracker'
 import { EvaluationModal } from './components/EvaluationModal'
 import { useSearch } from './hooks/useSearch'
-import { usePersonalCabinet } from './hooks/usePersonalCabinet'
+import { useLocalStorage } from './hooks/useLocalStorage'
 import { Medicine } from './types/medicine'
 import medicinesData from './data/medicines.json'
 
@@ -21,8 +21,38 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [isEvaluationOpen, setIsEvaluationOpen] = useState(false)
 
-  const { ownedIds, toggleMedicine, isOwned } = usePersonalCabinet()
+  const { entries, addEntry, removeEntry, refreshDaysLeft } = useLocalStorage()
   const highlightedIds = useSearch(allMedicines, searchQuery)
+
+  const ownedIds = Array.from(new Set(entries.map((e) => e.medicineId)))
+  const isOwned = (id: string) => ownedIds.includes(id)
+
+  const getShelfLifeYears = (shelfLife: string): number => {
+    const match = shelfLife.match(/(\d+)\s*ปี/)
+    return match ? parseInt(match[1]) : 3
+  }
+
+  const toggleMedicine = (id: string) => {
+    if (isOwned(id)) {
+      const targets = entries.filter((e) => e.medicineId === id)
+      targets.forEach((t) => removeEntry(t.id))
+    } else {
+      const med = allMedicines.find((m) => m.id === id)
+      if (med) {
+        const years = getShelfLifeYears(med.shelfLife)
+        const purchaseDate = new Date().toISOString().split('T')[0]
+        const d = new Date(purchaseDate)
+        d.setFullYear(d.getFullYear() + years)
+        const expiryDate = d.toISOString().split('T')[0]
+        addEntry({
+          medicineId: id,
+          medicineName: med.name,
+          purchaseDate,
+          expiryDate,
+        })
+      }
+    }
+  }
 
   const handleSelectMedicine = (medicine: Medicine) => {
     setSelectedMedicine(medicine)
@@ -62,6 +92,7 @@ export default function App() {
                 highlightedIds={highlightedIds}
                 ownedIds={ownedIds}
                 onToggleCabinet={toggleMedicine}
+                entries={entries}
               />
             </motion.div>
           )}
@@ -86,7 +117,13 @@ export default function App() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <ExpireTracker medicines={allMedicines} />
+              <ExpireTracker
+                medicines={allMedicines}
+                entries={entries}
+                addEntry={addEntry}
+                removeEntry={removeEntry}
+                refreshDaysLeft={refreshDaysLeft}
+              />
             </motion.div>
           )}
         </AnimatePresence>
@@ -98,6 +135,9 @@ export default function App() {
         onClose={() => setSelectedMedicine(null)}
         isOwned={selectedMedicine ? isOwned(selectedMedicine.id) : false}
         onToggleCabinet={toggleMedicine}
+        entries={entries}
+        onAddEntry={addEntry}
+        onRemoveEntry={removeEntry}
       />
 
       {/* Evaluation form modal */}

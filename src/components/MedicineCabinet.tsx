@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Plus, Check, X } from 'lucide-react'
-import { Medicine } from '../types/medicine'
+import { Medicine, ExpireEntry } from '../types/medicine'
 
 interface MedicineCabinetProps {
   medicines: Medicine[]
@@ -9,6 +9,7 @@ interface MedicineCabinetProps {
   highlightedIds: string[]
   ownedIds: string[]
   onToggleCabinet: (id: string) => void
+  entries: ExpireEntry[]
 }
 
 interface Shelf {
@@ -95,6 +96,7 @@ export function MedicineCabinet({
   highlightedIds,
   ownedIds,
   onToggleCabinet,
+  entries,
 }: MedicineCabinetProps) {
   const [tab, setTab] = React.useState<'mine' | 'recommended' | 'all'>('recommended')
   const isSearching = highlightedIds.length > 0
@@ -345,12 +347,49 @@ export function MedicineCabinet({
                             <div className="absolute top-1 left-1 w-4 h-4 rounded-full flex items-center justify-center z-10" style={{ background: '#DC2626', color: 'white', fontSize: 8 }}>★</div>
                           )}
 
-                          {/* Owned checkmark */}
-                          {isOwned && (
-                            <div className="absolute top-1 right-1 w-4 h-4 rounded-full flex items-center justify-center z-10" style={{ background: '#16A34A' }}>
-                              <Check size={9} color="white" />
-                            </div>
-                          )}
+                          {/* Owned checkmark with Expiry Status */}
+                          {isOwned && (() => {
+                            const medEntries = entries.filter((e) => e.medicineId === med.id)
+                            const minDaysLeft = medEntries.length > 0 ? Math.min(...medEntries.map((e) => e.daysLeft)) : null
+                            
+                            let badgeBg = '#16A34A' // Green
+                            let badgeText = ''
+                            
+                            if (minDaysLeft !== null) {
+                              if (minDaysLeft < 0) {
+                                badgeBg = '#DC2626' // Red
+                                badgeText = 'หมดอายุ'
+                              } else if (minDaysLeft < 30) {
+                                badgeBg = '#DC2626' // Red
+                                badgeText = `${minDaysLeft}ว`
+                              } else if (minDaysLeft < 90) {
+                                badgeBg = '#D97706' // Orange
+                                badgeText = `${minDaysLeft}ว`
+                              }
+                            }
+
+                            return (
+                              <div
+                                className="absolute top-1 right-1 rounded-full flex items-center justify-center z-10"
+                                style={{
+                                  background: badgeBg,
+                                  padding: badgeText ? '2px 4px' : '3.5px',
+                                  minWidth: badgeText ? 24 : 14,
+                                  height: 14,
+                                  boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+                                }}
+                                title={minDaysLeft !== null ? (minDaysLeft < 0 ? 'หมดอายุแล้ว' : `วันหมดอายุเหลือ: ${minDaysLeft} วัน`) : 'มีในตู้แล้ว'}
+                              >
+                                {badgeText ? (
+                                  <span style={{ fontSize: 7, color: 'white', fontWeight: 800, fontFamily: 'Sarabun, sans-serif' }}>
+                                    {badgeText}
+                                  </span>
+                                ) : (
+                                  <Check size={8} color="white" strokeWidth={3} />
+                                )}
+                              </div>
+                            )
+                          })()}
 
                           {/* Medicine Emoji */}
                           <div className="flex-1 flex items-center justify-center relative w-full h-full p-2 pb-0">

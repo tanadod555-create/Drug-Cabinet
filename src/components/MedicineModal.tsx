@@ -1,13 +1,16 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Clock, Thermometer, Check, Home } from 'lucide-react'
-import { Medicine } from '../types/medicine'
+import { X, Clock, Thermometer, Check, Home, Plus, Trash2 } from 'lucide-react'
+import { Medicine, ExpireEntry } from '../types/medicine'
 
 interface MedicineModalProps {
   medicine: Medicine | null
   onClose: () => void
   isOwned: boolean
   onToggleCabinet: (id: string) => void
+  entries: ExpireEntry[]
+  onAddEntry: (entry: Omit<ExpireEntry, 'id' | 'daysLeft'>) => void
+  onRemoveEntry: (id: string) => void
 }
 
 // Emojis are directly defined in medicines.json
@@ -23,7 +26,47 @@ const SUBCATEGORY_LABELS: Record<string, string> = {
   external_pain: 'ปวดภายนอก',
 }
 
-export function MedicineModal({ medicine, onClose, isOwned, onToggleCabinet }: MedicineModalProps) {
+export function MedicineModal({
+  medicine,
+  onClose,
+  isOwned,
+  onToggleCabinet,
+  entries,
+  onAddEntry,
+  onRemoveEntry,
+}: MedicineModalProps) {
+  const [purchaseDate, setPurchaseDate] = React.useState(new Date().toISOString().split('T')[0])
+  const [customExpiry, setCustomExpiry] = React.useState('')
+
+  React.useEffect(() => {
+    if (medicine) {
+      setPurchaseDate(new Date().toISOString().split('T')[0])
+      setCustomExpiry('')
+    }
+  }, [medicine])
+
+  const getShelfLifeYears = (shelfLife: string): number => {
+    const match = shelfLife.match(/(\d+)\s*ปี/)
+    return match ? parseInt(match[1]) : 3
+  }
+
+  const handleAddBatch = () => {
+    if (!medicine) return
+    const years = getShelfLifeYears(medicine.shelfLife)
+    const d = new Date(purchaseDate)
+    d.setFullYear(d.getFullYear() + years)
+    const expiryDate = customExpiry || d.toISOString().split('T')[0]
+    
+    onAddEntry({
+      medicineId: medicine.id,
+      medicineName: medicine.name,
+      purchaseDate,
+      expiryDate,
+    })
+    setCustomExpiry('')
+  }
+
+  const medEntries = medicine ? entries.filter((e) => e.medicineId === medicine.id) : []
   return (
     <AnimatePresence>
       {medicine && (
@@ -181,6 +224,113 @@ export function MedicineModal({ medicine, onClose, isOwned, onToggleCabinet }: M
                 <Section icon="🔍" title="สังเกตฉลากก่อนซื้อ" color="#7C3AED" bg="#F5F3FF">
                   <p className="text-sm" style={{ color: '#4C1D95' }}>{medicine.labelCheck}</p>
                 </Section>
+
+                {/* Expiration and batch management */}
+                {isOwned && (
+                  <Section icon="📌" title="จัดการรุ่นยาในตู้ของคุณ" color="#B8923A" bg="#FFFDF9">
+                    <div className="flex flex-col gap-3">
+                      {medEntries.length === 0 ? (
+                        <p className="text-xs text-gray-500">ไม่พบล็อตยาที่เปิดใช้งานอยู่ในตู้</p>
+                      ) : (
+                        <div className="flex flex-col gap-2">
+                          {medEntries.map((entry) => {
+                            const daysLeft = entry.daysLeft
+                            let statusLabel = `เหลือ ${daysLeft} วัน`
+                            let statusColor = '#16A34A'
+                            if (daysLeft < 0) {
+                              statusLabel = 'หมดอายุแล้ว'
+                              statusColor = '#DC2626'
+                            } else if (daysLeft < 30) {
+                              statusLabel = `เหลือ ${daysLeft} วัน`
+                              statusColor = '#DC2626'
+                            } else if (daysLeft < 90) {
+                              statusLabel = `เหลือ ${daysLeft} วัน`
+                              statusColor = '#D97706'
+                            }
+                            return (
+                              <div
+                                key={entry.id}
+                                className="flex items-center justify-between p-2 rounded-xl text-xs"
+                                style={{ background: 'white', border: '1px solid #E5D9C9' }}
+                              >
+                                <div className="flex-1 min-w-0 pr-2">
+                                  <div className="font-semibold text-gray-700">
+                                    ซื้อ: {new Date(entry.purchaseDate).toLocaleDateString('th-TH')}
+                                  </div>
+                                  <div className="text-gray-500 mt-0.5">
+                                    หมดอายุ: {new Date(entry.expiryDate).toLocaleDateString('th-TH')}
+                                  </div>
+                                </div>
+                                
+                                <div className="flex items-center gap-2 flex-shrink-0">
+                                  <span
+                                    className="px-2 py-0.5 rounded-full font-semibold text-[10px]"
+                                    style={{ background: statusColor + '15', color: statusColor }}
+                                  >
+                                    {statusLabel}
+                                  </span>
+                                  
+                                  <button
+                                    onClick={() => onRemoveEntry(entry.id)}
+                                    className="w-6 h-6 rounded-lg flex items-center justify-center text-red-600 hover:bg-red-50 transition-colors"
+                                    style={{ border: '1px solid rgba(220,38,38,0.2)' }}
+                                    title="ลบล็อตนี้"
+                                  >
+                                    <Trash2 size={11} />
+                                  </button>
+                                </div>
+                              </div>
+                            )
+                          })}
+                        </div>
+                      )}
+                      
+                      {/* Inline form to add batch */}
+                      <div
+                        className="p-3 rounded-xl flex flex-col gap-2.5"
+                        style={{ background: '#F5ECD740', border: '1px dashed #C8A26560' }}
+                      >
+                        <div className="text-[11px] font-bold text-amber-900">➕ เพิ่มล็อตยา/วันหมดอายุอื่น</div>
+                        
+                        <div className="grid grid-cols-2 gap-2">
+                          <div>
+                            <label className="block text-[10px] text-gray-500 mb-0.5">วันที่ซื้อ</label>
+                            <input
+                              type="date"
+                              value={purchaseDate}
+                              onChange={(e) => setPurchaseDate(e.target.value)}
+                              className="w-full px-2 py-1 rounded-lg text-xs outline-none bg-white border border-amber-200"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-[10px] text-gray-500 mb-0.5">วันหมดอายุ</label>
+                            <input
+                              type="date"
+                              value={customExpiry || (() => {
+                                if (!medicine) return ''
+                                const years = getShelfLifeYears(medicine.shelfLife)
+                                const d = new Date(purchaseDate)
+                                d.setFullYear(d.getFullYear() + years)
+                                return d.toISOString().split('T')[0]
+                              })()}
+                              onChange={(e) => setCustomExpiry(e.target.value)}
+                              className="w-full px-2 py-1 rounded-lg text-xs outline-none bg-white border border-amber-200"
+                            />
+                          </div>
+                        </div>
+                        
+                        <button
+                          onClick={handleAddBatch}
+                          className="py-1 rounded-lg font-semibold text-xs flex items-center justify-center gap-1 bg-amber-700 text-white hover:bg-amber-800 transition-colors"
+                          style={{ border: 'none', cursor: 'pointer', fontFamily: 'Kanit, sans-serif' }}
+                        >
+                          <Plus size={12} />
+                          บันทึกล็อตการซื้อนี้
+                        </button>
+                      </div>
+                    </div>
+                  </Section>
+                )}
 
                 {/* Action buttons */}
                 <div className="flex flex-col gap-2">
