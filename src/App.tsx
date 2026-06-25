@@ -3,15 +3,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Header } from './components/Header'
 import { MedicineCabinet } from './components/MedicineCabinet'
 import { MedicineModal } from './components/MedicineModal'
-import { SafetyChecker } from './components/SafetyChecker'
 import { SymptomGuide } from './components/SymptomGuide'
 import { ExpireTracker } from './components/ExpireTracker'
+import { EvaluationModal } from './components/EvaluationModal'
 import { useSearch } from './hooks/useSearch'
 import { usePersonalCabinet } from './hooks/usePersonalCabinet'
 import { Medicine } from './types/medicine'
 import medicinesData from './data/medicines.json'
 
-type ActiveView = 'cabinet' | 'checker' | 'symptom_guide' | 'expire'
+type ActiveView = 'cabinet' | 'symptom_guide' | 'expire'
 
 const allMedicines: Medicine[] = medicinesData.medicines as Medicine[]
 
@@ -19,26 +19,13 @@ export default function App() {
   const [activeView, setActiveView] = useState<ActiveView>('cabinet')
   const [selectedMedicine, setSelectedMedicine] = useState<Medicine | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
-  const [checkerList, setCheckerList] = useState<Medicine[]>([])
+  const [isEvaluationOpen, setIsEvaluationOpen] = useState(false)
 
   const { ownedIds, toggleMedicine, isOwned } = usePersonalCabinet()
   const highlightedIds = useSearch(allMedicines, searchQuery)
 
   const handleSelectMedicine = (medicine: Medicine) => {
     setSelectedMedicine(medicine)
-  }
-
-  const handleAddToChecker = (medicine: Medicine) => {
-    setCheckerList((prev) => {
-      const already = prev.find((m) => m.id === medicine.id)
-      if (already) return prev.filter((m) => m.id !== medicine.id)
-      if (prev.length >= 3) return prev
-      return [...prev, medicine]
-    })
-  }
-
-  const handleRemoveFromChecker = (id: string) => {
-    setCheckerList((prev) => prev.filter((m) => m.id !== id))
   }
 
   const handleViewChange = (view: ActiveView) => {
@@ -56,6 +43,7 @@ export default function App() {
           setSearchQuery(q)
           if (q && activeView !== 'cabinet') setActiveView('cabinet')
         }}
+        onOpenEvaluation={() => setIsEvaluationOpen(true)}
       />
 
       <main>
@@ -71,29 +59,9 @@ export default function App() {
               <MedicineCabinet
                 medicines={allMedicines}
                 onSelect={handleSelectMedicine}
-                checkerList={checkerList}
-                onAddToChecker={handleAddToChecker}
                 highlightedIds={highlightedIds}
                 ownedIds={ownedIds}
                 onToggleCabinet={toggleMedicine}
-              />
-            </motion.div>
-          )}
-
-          {activeView === 'checker' && (
-            <motion.div
-              key="checker"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <SafetyChecker
-                medicines={allMedicines}
-                checkerList={checkerList}
-                onRemoveFromChecker={handleRemoveFromChecker}
-                onClear={() => setCheckerList([])}
-                onAddFromLibrary={handleAddToChecker}
               />
             </motion.div>
           )}
@@ -128,10 +96,14 @@ export default function App() {
       <MedicineModal
         medicine={selectedMedicine}
         onClose={() => setSelectedMedicine(null)}
-        isInChecker={checkerList.some((m) => m.id === selectedMedicine?.id)}
-        onAddToChecker={handleAddToChecker}
         isOwned={selectedMedicine ? isOwned(selectedMedicine.id) : false}
         onToggleCabinet={toggleMedicine}
+      />
+
+      {/* Evaluation form modal */}
+      <EvaluationModal
+        isOpen={isEvaluationOpen}
+        onClose={() => setIsEvaluationOpen(false)}
       />
 
       {/* Footer */}
@@ -143,7 +115,7 @@ export default function App() {
           fontFamily: 'Sarabun, sans-serif',
         }}
       >
-        <p>ข้อมูลอ้างอิงจากประกาศกระทรวงสาธารณสุข เรื่อง ยาสามัญประจำบ้านแผนปัจจุบัน พ.ศ. 2542</p>
+        <p>ข้อมูลอ้างอิงจากประกาศกระทรวงสาธารณสุข เรื่อง ยาสามัญประจำบ้านแผนปัจจุบัน พ.ศ. 2568</p>
         <p className="mt-0.5">เพื่อการศึกษาเท่านั้น — ไม่ใช่คำแนะนำทางการแพทย์</p>
       </footer>
     </div>

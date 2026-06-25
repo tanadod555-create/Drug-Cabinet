@@ -1,13 +1,11 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Plus, Clock, Thermometer, Shield, Check, Home } from 'lucide-react'
+import { X, Clock, Thermometer, Check, Home } from 'lucide-react'
 import { Medicine } from '../types/medicine'
 
 interface MedicineModalProps {
   medicine: Medicine | null
   onClose: () => void
-  isInChecker: boolean
-  onAddToChecker: (medicine: Medicine) => void
   isOwned: boolean
   onToggleCabinet: (id: string) => void
 }
@@ -25,7 +23,7 @@ const SUBCATEGORY_LABELS: Record<string, string> = {
   external_pain: 'ปวดภายนอก',
 }
 
-export function MedicineModal({ medicine, onClose, isInChecker, onAddToChecker, isOwned, onToggleCabinet }: MedicineModalProps) {
+export function MedicineModal({ medicine, onClose, isOwned, onToggleCabinet }: MedicineModalProps) {
   return (
     <AnimatePresence>
       {medicine && (
@@ -207,26 +205,6 @@ export function MedicineModal({ medicine, onClose, isInChecker, onAddToChecker, 
                       <><Check size={16} />มีในตู้ยาของฉันแล้ว — กดเพื่อนำออก</>
                     ) : (
                       <><Home size={16} />เพิ่มเข้าตู้ยาของฉัน</>
-                    )}
-                  </motion.button>
-
-                  {/* Checker button (secondary) */}
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => onAddToChecker(medicine)}
-                    className="w-full py-2.5 rounded-2xl font-medium text-sm flex items-center justify-center gap-2 transition-all"
-                    style={{
-                      background: isInChecker ? '#EDE9FE' : '#F5F3FF',
-                      color: '#7C3AED',
-                      border: '1.5px solid #C4B5FD',
-                      fontFamily: 'Sarabun, sans-serif',
-                    }}
-                  >
-                    {isInChecker ? (
-                      <><Shield size={14} />อยู่ใน Safety Checker แล้ว — กดเพื่อนำออก</>
-                    ) : (
-                      <><Plus size={14} />เพิ่มเข้า Safety Checker</>
                     )}
                   </motion.button>
                 </div>

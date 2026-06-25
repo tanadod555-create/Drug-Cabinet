@@ -6,8 +6,6 @@ import { Medicine } from '../types/medicine'
 interface MedicineCabinetProps {
   medicines: Medicine[]
   onSelect: (medicine: Medicine) => void
-  checkerList: Medicine[]
-  onAddToChecker: (medicine: Medicine) => void
   highlightedIds: string[]
   ownedIds: string[]
   onToggleCabinet: (id: string) => void
@@ -94,8 +92,6 @@ const shelfVariants = {
 export function MedicineCabinet({
   medicines,
   onSelect,
-  checkerList,
-  onAddToChecker,
   highlightedIds,
   ownedIds,
   onToggleCabinet,
@@ -310,7 +306,6 @@ export function MedicineCabinet({
                 <div className="flex flex-wrap gap-4">
                   {shelf.medicines.map((med) => {
                     const isOwned = safeOwnedIds.includes(med.id)
-                    const isInChecker = checkerList.some((c) => c.id === med.id)
                     const isHighlighted = isSearching && highlightedIds.includes(med.id)
                     const isDimmed = isSearching && !highlightedIds.includes(med.id)
 
@@ -407,17 +402,6 @@ export function MedicineCabinet({
                             title={isOwned ? 'นำออกจากตู้ยาของฉัน' : 'เพิ่มในตู้ยาของฉัน'}
                           >
                             {isOwned ? <X size={9} /> : <Plus size={9} />}
-                          </motion.button>
-
-                          {/* Checker toggle */}
-                          <motion.button
-                            whileTap={{ scale: 0.9 }}
-                            onClick={(e) => { e.stopPropagation(); onAddToChecker(med) }}
-                            className="w-5 h-5 rounded-full flex items-center justify-center"
-                            style={{ background: isInChecker ? '#8B5CF6' : '#C8A265', color: 'white' }}
-                            title="เพิ่มใน Safety Checker"
-                          >
-                            <Check size={9} />
                           </motion.button>
                         </div>
                       </motion.div>

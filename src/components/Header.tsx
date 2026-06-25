@@ -1,17 +1,18 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Search, Shield, ClipboardList, BookOpen, Phone } from 'lucide-react'
+import { Search, ClipboardList, BookOpen, Phone } from 'lucide-react'
 
-type ActiveView = 'cabinet' | 'checker' | 'symptom_guide' | 'expire'
+type ActiveView = 'cabinet' | 'symptom_guide' | 'expire'
 
 interface HeaderProps {
   activeView: ActiveView
   onViewChange: (view: ActiveView) => void
   searchQuery: string
   onSearchChange: (q: string) => void
+  onOpenEvaluation: () => void
 }
 
-export function Header({ activeView, onViewChange, searchQuery, onSearchChange }: HeaderProps) {
+export function Header({ activeView, onViewChange, searchQuery, onSearchChange, onOpenEvaluation }: HeaderProps) {
   return (
     <header
       style={{
@@ -72,13 +73,6 @@ export function Header({ activeView, onViewChange, searchQuery, onSearchChange }
           {/* Nav buttons */}
           <div className="flex items-center gap-1.5">
             <NavBtn
-              icon={<Shield size={14} />}
-              label="ตรวจสอบยา"
-              active={activeView === 'checker'}
-              color="#8B5CF6"
-              onClick={() => onViewChange('checker')}
-            />
-            <NavBtn
               icon={<ClipboardList size={14} />}
               label="หมดอายุ"
               active={activeView === 'expire'}
@@ -91,6 +85,13 @@ export function Header({ activeView, onViewChange, searchQuery, onSearchChange }
               active={activeView === 'symptom_guide'}
               color="#16A34A"
               onClick={() => onViewChange('symptom_guide')}
+            />
+            <NavBtn
+              icon={<span style={{ fontSize: 13, lineHeight: 1 }}>📝</span>}
+              label="ประเมินเว็บ"
+              active={false}
+              color="#C8A265"
+              onClick={onOpenEvaluation}
             />
 
             {/* 1669 always-visible button */}
