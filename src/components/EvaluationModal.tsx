@@ -53,6 +53,7 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
     5: 0,
   })
   const [comment, setComment] = React.useState('')
+  const [evaluatorName, setEvaluatorName] = React.useState('')
   const [submitted, setSubmitted] = React.useState(false)
   const [copied, setCopied] = React.useState(false)
   const [isSending, setIsSending] = React.useState(false)
@@ -70,6 +71,7 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
           const parsed = JSON.parse(saved)
           setRatings(parsed.ratings || { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 })
           setComment(parsed.comment || '')
+          setEvaluatorName(parsed.evaluatorName || '')
         } catch (e) {
           // ignore
         }
@@ -86,8 +88,9 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
     setHoveredRatings(prev => ({ ...prev, [qId]: rating }))
   }
 
-  const getSummaryText = (currentRatings: Record<number, number>, currentComment: string) => {
+  const getSummaryText = (currentRatings: Record<number, number>, currentComment: string, name: string) => {
     let summary = `📋 ผลประเมินการใช้งานเว็บตู้ยาสามัญประจำบ้าน\n`
+    summary += `👤 ผู้ประเมิน: ${name || 'ผู้เข้าชมทั่วไป'}\n`
     summary += `------------------------------------\n`
     summary += `⭐ 1. UI Design: ${'★'.repeat(currentRatings[1])}${'☆'.repeat(5 - currentRatings[1])} (${currentRatings[1]}/5)\n`
     summary += `⭐ 2. Usability: ${'★'.repeat(currentRatings[2])}${'☆'.repeat(5 - currentRatings[2])} (${currentRatings[2]}/5)\n`
@@ -127,6 +130,12 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
   }
 
   const handleSubmit = async () => {
+    // Validate that name is provided
+    if (!evaluatorName.trim()) {
+      setError('กรุณากรอกชื่อผู้ประเมินก่อนส่งนะครับ')
+      return
+    }
+
     // Validate that all questions are answered
     const unanswered = Object.entries(ratings).filter(([_, rating]) => rating === 0)
     if (unanswered.length > 0) {
@@ -138,6 +147,7 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
     setError('')
 
     const evaluationData = {
+      name: evaluatorName.trim(),
       q1: ratings[1],
       q2: ratings[2],
       q3: ratings[3],
@@ -148,7 +158,7 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
     }
 
     // Save to localStorage
-    localStorage.setItem('cabinet_evaluation', JSON.stringify({ ratings, comment }))
+    localStorage.setItem('cabinet_evaluation', JSON.stringify({ ratings, comment, evaluatorName }))
 
     // Post to Google Sheet Web App if URL is provided
     if (GOOGLE_SHEET_URL) {
@@ -170,7 +180,7 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
     setSubmitted(true)
 
     // Automatically copy the result text
-    const textSummary = getSummaryText(ratings, comment)
+    const textSummary = getSummaryText(ratings, comment, evaluatorName)
     copyToClipboard(textSummary)
   }
 
@@ -229,6 +239,24 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
                       ⚠️ {error}
                     </div>
                   )}
+
+                  {/* Name field */}
+                  <div className="space-y-1.5 p-3 rounded-2xl bg-white border border-[#E5D9C9] shadow-sm">
+                    <label className="block text-xs font-bold text-[#2C1810]" style={{ fontFamily: 'Kanit, sans-serif' }}>
+                      👤 ชื่อผู้ประเมิน / ชื่อเล่นของพี่
+                    </label>
+                    <input
+                      type="text"
+                      value={evaluatorName}
+                      onChange={(e) => { setEvaluatorName(e.target.value); setError('') }}
+                      placeholder="เช่น พี่นนท์, หมอไอซ์, พี่ยู..."
+                      className="w-full rounded-xl px-3 py-2 text-xs md:text-sm border border-[#E5D9C9] outline-none"
+                      style={{
+                        background: '#FFFBF5',
+                        fontFamily: 'Sarabun, sans-serif',
+                      }}
+                    />
+                  </div>
 
                   <div className="space-y-4">
                     {QUESTIONS.map((q) => {
@@ -316,13 +344,13 @@ export function EvaluationModal({ isOpen, onClose }: EvaluationModalProps) {
 
                   {/* Textarea representation of what was copied */}
                   <div className="w-full p-4 rounded-2xl bg-white border border-[#E5D9C9] text-left text-xs space-y-1 text-gray-700 shadow-inner font-mono whitespace-pre-line leading-relaxed max-w-md">
-                    {getSummaryText(ratings, comment)}
+                    {getSummaryText(ratings, comment, evaluatorName)}
                   </div>
 
                   <div className="flex gap-2">
                     <button
                       onClick={() => {
-                        const success = copyToClipboard(getSummaryText(ratings, comment))
+                        const success = copyToClipboard(getSummaryText(ratings, comment, evaluatorName))
                         if (success) {
                           alert('คัดลอกข้อความผลประเมินใหม่เรียบร้อยแล้ว!')
                         }
